@@ -1,6 +1,7 @@
-body{
-margin: 0;
-background: #222;
-color: #f1f1f1;
-font-size: 24px;
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: red;
 }
