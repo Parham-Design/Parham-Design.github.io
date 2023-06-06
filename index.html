@@ -76,13 +76,18 @@
           <div class="my-profile-image">
             <img src="./src/soheil.png" alt="Profile Image" />
           </div>
+
           <br />
-          <div class="my-profile-name">
-            <h5>Soheil Zarrinpour (Parham)</h5>
+
+          <div class="my-sidebar-menu-item">
+            <div class="my-profile-name">
+              <h5>Soheil Zarrinpour<br /><span>( Parham )</span></h5>
+            </div>
+            <div class="my-profile-title">
+              <h5><span>UI</span>/<span>UX</span> Developer In Iran</h5>
+            </div>
           </div>
-          <div class="my-profile-title">
-            <h5><span>ui</span>/<span>ux</span> Developer in iran</h5>
-          </div>
+
           <div class="my-sidebar-menu-item">
             <div class="accordion accordion-flush" id="accordionFlushExample">
               <div class="accordion-item">
@@ -94,8 +99,37 @@
                     data-bs-target="#flush-collapseTwo"
                     aria-expanded="false"
                     aria-controls="flush-collapseTwo"
+                    id="change-language-button"
                   >
-                    Cgange Language
+                    <div>Cgange Language</div>
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-down my-button-sufix-down"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                        />
+                      </svg>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        class="bi bi-chevron-up my-button-sufix-up"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+                        />
+                      </svg>
+                    </div>
                   </button>
                 </h2>
                 <div
@@ -104,7 +138,7 @@
                   data-bs-parent="#accordionFlushExample"
                 >
                   <div class="accordion-body">
-                    <div class="form-check form-switch my-language-en-switch">
+                    <div class="form-check form-switch my-language-switch">
                       <input
                         class="form-check-input my-switch-input"
                         type="radio"
@@ -119,7 +153,7 @@
                         </label>
                       </a>
                     </div>
-                    <div class="form-check form-switch my-language-ir-switch">
+                    <div class="form-check form-switch my-language-switch">
                       <input
                         class="form-check-input my-switch-input"
                         type="radio"
@@ -146,8 +180,35 @@
                     data-bs-target="#flush-collapseThree"
                     aria-expanded="false"
                     aria-controls="flush-collapseThree"
+                    id="change-theme-button"
                   >
                     Change Theme
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chevron-down my-button-sufix-down"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-chevron-up my-button-sufix-up"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+                      />
+                    </svg>
                   </button>
                 </h2>
                 <div
@@ -201,32 +262,41 @@
     </nav>
 
     <div class="my-content-area">
-      <section class="my-section">
-        <div class="my-hero-section">
-          <div class="my-hero-section-banner-shade">
-            <div class="my-hero-section-banner-content">
-              <div class="my-hero-section-banner-content-body">
-                <div>
-                  <h1>
-                    <span id="my-hero-section-banner-content-body-hi-span"
-                      >Hi !</span
-                    >
-                    <br />
-                    <span id="my-hero-section-banner-content-body-im-span"
-                      >I'm</span
-                    >
-                    <br />
-                    <span id="my-hero-section-banner-content-body-pz-span"
-                      >Parham Zarrinpour</span
-                    >
-                  </h1>
-                  <h2>
-                    <span id="my-hero-section-banner-content-body-detail-span"
-                      >my name is soheil zarrinpour, some people know me as
-                      parham...</span
-                    >
-                  </h2>
-                </div>
+      <section class="my-hero-section">
+        <div class="my-hero-section-banner-shade">
+          <div class="my-hero-section-banner-content">
+            <div class="my-hero-section-banner-content-wrapper">
+              <div class="my-hero-section-banner-content-text-wrapper">
+                <h1>
+                  <span style="color: rgb(255, 253, 130)">$</span>
+                  <span style="color: yellow">(</span>
+                  <span style="color: darkturquoise">document</span>
+                  <span style="color: yellow">)</span>
+                  <span style="color: white">.</span>
+                  <span style="color: rgb(255, 253, 130)">ready</span>
+                  <span style="color: yellow">(</span>
+                  <span style="color: rgb(65, 65, 201)">function</span>
+                  <span style="color: purple">(){</span>
+                  <br />
+                  <span style="color: darkturquoise">
+                    &nbsp;&nbsp;&nbsp;&nbsp;console
+                  </span>
+                  <span style="color: white">.</span>
+                  <span style="color: rgb(255, 253, 130)">log</span>
+                  <span style="color: blue">(</span>
+                  <span style="color: orangered">"Hellow World ...!"</span>
+                  <span style="color: blue">)</span>
+                  <span style="color: white">;</span>
+                  <br />
+                  <span style="color: purple">}</span>
+                  <span style="color: yellow">)</span>
+                  <span style="color: white">;</span>
+                  <br /><br />
+                  <span style="color: rgb(56, 116, 56)">
+                    // My name is soheil zarrinpour, some people know me as
+                    parham...
+                  </span>
+                </h1>
               </div>
             </div>
           </div>
@@ -237,10 +307,10 @@
 
       <section class="my-section">
         <div class="container">
-          <h4 class="my-about-section">about me</h4>
-          <h1>who am i ...?</h1>
+          <h4 class="my-about-section">About me</h4>
+          <h1>Who am i ...?</h1>
           <p>
-            hi, my name is soheil zarrinpour. meny people know me as parham. im
+            Hi, my name is soheil zarrinpour. meny people know me as parham. im
             wed developer ,ui/ux designer. i have meny exprience on working with
             html5 css3 scss jquery and java script . i also worked with some
             frame work like angular and vue js . im good to go with materialize
@@ -248,7 +318,7 @@
             node js, and ofcurse using mysql for data base.
           </p>
           <p>
-            well, you may asked what happend to me. what make me developer.
+            Well, you may asked what happend to me. what make me developer.
             well, i was start to learn about computer managment at the first
             place but after a meny years was passed i go to the software side of
             the world of computer. my brothers both are developer and they

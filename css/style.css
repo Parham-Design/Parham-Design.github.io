@@ -1,15 +1,16 @@
 :root {
   --opacity-0: 0;
-  --opacity-1: 0.1;
-  --opacity-2: 0.2;
-  --opacity-3: 0.3;
-  --opacity-4: 0.4;
-  --opacity-5: 0.5;
-  --opacity-6: 0.6;
-  --opacity-7: 0.7;
-  --opacity-8: 0.8;
-  --opacity-9: 0.9;
-  --opacity-10: 1;
+  --opacity-10: 0.1;
+  --opacity-20: 0.2;
+  --opacity-30: 0.3;
+  --opacity-40: 0.4;
+  --opacity-50: 0.5;
+  --opacity-60: 0.6;
+  --opacity-70: 0.7;
+  --opacity-80: 0.8;
+  --opacity-90: 0.9;
+  --opacity-100: 1;
+
   --dark-60: rgb(31, 31, 31);
   --dark-30: rgb(61, 61, 61);
   --dark-10: rgb(230, 230, 230);
@@ -53,39 +54,67 @@ button:focus {
 
 .navbar.fixed-top {
   padding: 0 !important;
-  background-color: rgba(var(--primary-color), var(--opacity-7)) !important;
+  background-color: rgba(var(--primary-color), var(--opacity-70)) !important;
   width: 100% !important;
 }
 
-.navbar-brand {
+.container-fluid {
+  padding: 0 1em 0 2em;
+}
+
+.navbar-brand,
+.navbar-brand:hover,
+.navbar-brand:focus,
+.navbar-brand:active {
   margin: 0;
   color: rgb(var(--text-color));
 }
 
 .my-navbar-toggler-button {
+  width: 3em;
+  height: 3em;
   padding: 0;
   color: rgb(var(--text-color));
+}
+
+.my-navbar-toggler-button svg {
+  width: 2em;
+  height: 2em;
+}
+
+.navbar-brand {
+  font-size: 1.5em;
 }
 
 .offcanvas.offcanvas-start {
   height: 100% !important;
   width: 320px !important;
-  background-color: rgba(var(--primary-color), var(--opacity-7)) !important;
+  background-color: rgba(var(--primary-color), var(--opacity-70)) !important;
 }
 
 .offcanvas-header {
-  margin-bottom: 10px;
-  padding: 0;
+  margin-bottom: 0.5em;
+  padding: 0 1em;
 }
 
 .my-navbar-close-button {
   background: unset;
   color: rgb(var(--text-color));
   padding: 0;
+  width: 4em;
+  height: 4em;
+}
+
+.my-navbar-close-button svg {
+  width: 2em;
+  height: 2em;
 }
 
 .my-profile-image {
   margin: 0 auto;
+  width: 10em;
+  height: 10em;
+  margin-bottom: 1.5em;
 }
 
 .my-profile-image img {
@@ -93,26 +122,43 @@ button:focus {
   height: 100%;
   background-size: cover;
   border-radius: 100%;
-  border: 1px solid rgb(var(--text-color)) !important;
+  border: 1px solid rgb(var(--active-special-text-color)) !important;
+}
+
+.my-sidebar-menu-item {
+  width: 100%;
+}
+
+.my-sidebar-menu-item::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 0;
+  margin: 0 1.3em !important;
+  right: 0;
+  visibility: visible;
+  background-color: rgb(var(--text-color));
 }
 
 .my-profile-name h5 {
   text-align: center;
   display: block;
   width: 100%;
-  font-family: "Playfair Display", Georgia, serif;
   color: rgb(var(--text-color));
-  font-weight: 900 !important;
-  font-size: 25px;
-  margin-bottom: 0.5em;
+  font-weight: 800 !important;
+  font-size: 1.7em;
+}
+
+.my-profile-name h5 span {
+  font-size: 0.7em;
+  font-weight: 500 !important;
 }
 
 .my-profile-title h5 {
   text-align: center;
   display: block;
-  margin-bottom: 2em;
-  font-size: 12px;
-  text-transform: uppercase;
+  margin-bottom: 1.3em;
+  font-size: 1em;
   color: rgb(var(--text-color));
 }
 
@@ -135,18 +181,27 @@ button:focus {
   --bs-accordion-active-bg: none;
 }
 
+.accordion-button {
+  padding: 1.3em 2em;
+  line-height: 0;
+}
+
 .my-switch-input {
   float: right !important;
 }
 
-.my-language-en-switch,
-.my-language-ir-switch,
+.accordion-body {
+  padding: 0 !important;
+}
+
+.my-language-switch,
 .my-theme-switch {
-  padding: 0 50px;
+  padding: 0.5em 3em;
   text-align: left;
 }
 
 .my-sidebar-footer {
+  font-size: 1.1em;
   width: 100%;
   text-align: center;
   bottom: 0 !important;
@@ -172,16 +227,14 @@ button:focus {
 }
 
 .my-hero-section {
-  background: url(../src/banner.jpg);
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  width: 100% !important;
+  height: 650px !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 .my-hero-section-banner-shade {
-  background-color: rgba(var(--primary-color), var(--opacity-8)) !important;
-  /* background: radial-gradient(transparent, var(--primary-color)) !important; */
+  background-color: rgba(var(--primary-color), var(--opacity-80)) !important;
   width: 100%;
   height: 100%;
 }
@@ -190,282 +243,117 @@ button:focus {
   width: 100%;
   height: 100%;
   display: table;
-  padding-top: 50px;
+  padding: 2em;
 }
 
-.my-hero-section-banner-content-body {
+.my-hero-section-banner-content-wrapper {
   display: table-cell;
   vertical-align: middle;
-  /* padding: 150px;
-  position: relative; */
 }
 
-.my-hero-section-banner-content-body h1 {
-  margin-bottom: 20px;
-  font-size: 40px;
-  line-height: 1.5;
-  font-weight: 500;
-  color: rgb(var(--text-color));
-  font-family: "Playfair Display", Georgia, serif;
+.my-hero-section-banner-content-text-wrapper {
+  background: black;
+  padding: 15px;
+  border-radius: 1em;
+  border: 1px solid white;
+  /* box-shadow: 0 0 2em 2em black; */
 }
 
-.my-hero-section-banner-content-body h2 {
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  font-weight: 300;
-  font-family: "Quicksand", Arial, sans-serif;
-  color: rgb(var(--text-color));
+.my-hero-section-banner-content-wrapper h1 {
+  margin: 0 !important;
+  font-size: 1em;
 }
 
-#my-hero-section-banner-content-body-hi-span {
-  animation: hi 3000ms;
+.my-section {
+  width: 100% !important;
+  height: 650px !important;
+  padding: 0 2em;
 }
 
-#my-hero-section-banner-content-body-im-span {
-  animation: im 3000ms;
+.my-section .container {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-#my-hero-section-banner-content-body-pz-span {
-  animation: pz 3000ms;
+.my-section .container h4 {
+  letter-spacing: 0.5em !important;
+  font-size: 0.8em !important;
 }
 
-#my-hero-section-banner-content-body-detail-span {
-  animation: detail 3000ms;
+.my-section .container h1 {
+  font-size: 1.9em !important;
 }
 
-#my-hero-section-banner-content-body-hi-span,
-#my-hero-section-banner-content-body-im-span,
-#my-hero-section-banner-content-body-pz-span,
-#my-hero-section-banner-content-body-detail-span {
-  position: relative;
-}
-
-.my-about-section {
-  letter-spacing: 5px !important;
-  font-size: 10px !important;
-  font-weight: 700 !important;
-  font-family: system-ui !important;
-  text-transform: uppercase !important;
-}
-
-@keyframes hi {
-  from {
-    opacity: 0;
-    top: -50px;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes im {
-  from {
-    opacity: 0;
-    left: -50px;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes pz {
-  from {
-    opacity: 0;
-    left: 50px;
-  }
-  to {
-    left: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes detail {
-  from {
-    opacity: 0;
-    bottom: -50px;
-  }
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
+.my-section .container p {
+  text-align: justify;
 }
 
 /* `xs` applies to small devices (portrait phones, betwean 320px ~ 575px) */
-@media only screen and (min-width: 320px) and (max-width: 575px) {
-  .container-fluid {
-    padding: 0 0 0 10px;
+@media only screen and (min-width: 0px) and (max-width: 575px) {
+  body {
+    font-size: 15px;
   }
-  .my-navbar-toggler-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-toggler-button svg {
-    width: 25px;
-    height: 25px;
-  }
-  .navbar-brand {
-    font-size: 16px;
-  }
-  .my-navbar-close-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-close-button svg {
-    width: 20px;
-    height: 20px;
-  }
-  .my-profile-image {
-    width: 80px;
-    height: 80px;
+  .my-hero-section {
+    background: url(../src/css-code-wallpaper.jpg);
   }
 }
+
 /* `sm` applies to small devices (portrait phones, betwean 576px ~ 767px) */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-  .container-fluid {
-    padding: 0 10px 0 20px;
+  body {
+    font-size: 15px;
   }
-  .my-navbar-toggler-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-toggler-button svg {
-    width: 25px;
-    height: 25px;
-  }
-  .navbar-brand {
-    font-size: 18px;
-  }
-  .my-navbar-close-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-close-button svg {
-    width: 20px;
-    height: 20px;
-  }
-  .my-profile-image {
-    width: 95px;
-    height: 95px;
+  .my-hero-section {
+    background: url(../src/css-code-wallpaper.jpg);
   }
 }
 
 /* `md` applies to medium devices (landscape phones, betwean 768px ~ 991px) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .container-fluid {
-    padding: 0 20px 0 30px;
+  body {
+    font-size: 16px;
   }
-  .my-navbar-toggler-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-toggler-button svg {
-    width: 30px;
-    height: 30px;
-  }
-  .navbar-brand {
-    font-size: 20px;
-  }
-  .my-navbar-close-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-close-button svg {
-    width: 25px;
-    height: 25px;
-  }
-  .my-profile-image {
-    width: 110px;
-    height: 110px;
+  .my-hero-section {
+    background: url(../src/css-code-wallpaper.jpg);
   }
 }
+
 /* `lg` applies to medium devices (tablets, betwean 992px ~ 1199px) */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .container-fluid {
-    padding: 0 30px 0 40px;
+  body {
+    font-size: 17px;
   }
-  .my-navbar-toggler-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-toggler-button svg {
-    width: 30px;
-    height: 30px;
-  }
-  .navbar-brand {
-    font-size: 22px;
-  }
-  .my-navbar-close-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-close-button svg {
-    width: 25px;
-    height: 25px;
-  }
-  .my-profile-image {
-    width: 125px;
-    height: 125px;
+  .my-hero-section {
+    background: url(../src/banner.jpg);
   }
 }
 
 /* `xl` applies to large devices (desktops, betwean 1200px ~ 1399px) */
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
-  .container-fluid {
-    padding: 0 40px 0 50px;
+  body {
+    font-size: 18px;
   }
-  .my-navbar-toggler-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-toggler-button svg {
-    width: 35px;
-    height: 35px;
-  }
-  .navbar-brand {
-    font-size: 24px;
-  }
-  .my-navbar-close-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-close-button svg {
-    width: 30px;
-    height: 30px;
-  }
-  .my-profile-image {
-    width: 140px;
-    height: 140px;
+  .my-hero-section {
+    background: url(../src/banner.jpg);
   }
 }
-/* `xxl` applies to large devices (large desktops, higher than 1400px) */
-@media only screen and (min-width: 1400px) {
-  .container-fluid {
-    padding: 0 50px 0 60px;
+
+/* `2xl` applies to large devices (large desktops, betwean 1400px ~ 2559px) */
+@media only screen and (min-width: 1400px) and (max-width: 2559px) {
+  body {
+    font-size: 20px;
   }
-  .my-navbar-toggler-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-toggler-button svg {
-    width: 35px;
-    height: 35px;
-  }
-  .navbar-brand {
-    font-size: 26px;
-  }
-  .my-navbar-close-button {
-    width: 50px;
-    height: 50px;
-  }
-  .my-navbar-close-button svg {
-    width: 30px;
-    height: 30px;
-  }
-  .my-profile-image {
-    width: 155px;
-    height: 155px;
+  .my-hero-section {
+    background: url(../src/banner.jpg);
   }
 }
+
+/* `3xl` applies to xtra large devices (large desktops, higher than 2560px) */
+/* @media only screen and (min-width: 2560px) {
+  body {
+    font-size: 22px;
+  }
+  .my-hero-section {
+    background: url(../src/banner.jpg);
+  }
+} */
