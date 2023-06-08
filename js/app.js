@@ -1,84 +1,90 @@
 //  ** start here ** (this section is for switching betwean persian language and english language)
-let en_content = "hello world";
-let ir_content = "سلام دنیا";
 
-function contentRender(content_type) {
-  if (content_type == "en-content") {
-    document.getElementById("content-render").innerText = en_content;
-  } else {
-    document.getElementById("content-render").innerText = ir_content;
-  }
-}
+// let en_content = "hello world";
+// let ir_content = "سلام دنیا";
 
-(() => {
-  contentRender("en-content");
-})();
+// function contentRender(content_type) {
+//   if (content_type == "en-content") {
+//     document.getElementById("content-render").innerText = en_content;
+//   } else {
+//     document.getElementById("content-render").innerText = ir_content;
+//   }
+// }
 
-document.getElementById("en-language").addEventListener("click", () => {
-  let en = document.getElementById("en-language");
-  if (en.checked) {
-    contentRender("en-content");
-  } else {
-    contentRender("ir-content");
-  }
-});
+// (() => {
+//   contentRender("en-content");
+// })();
 
-document.getElementById("ir-language").addEventListener("click", () => {
-  let ir = document.getElementById("ir-language");
-  if (ir.checked) {
-    contentRender("ir-content");
-  } else {
-    contentRender("en-content");
-  }
-});
+// document.getElementById("en-language").addEventListener("click", () => {
+//   let en = document.getElementById("en-language");
+//   if (en.checked) {
+//     contentRender("en-content");
+//   } else {
+//     contentRender("ir-content");
+//   }
+// });
+
+// document.getElementById("ir-language").addEventListener("click", () => {
+//   let ir = document.getElementById("ir-language");
+//   if (ir.checked) {
+//     contentRender("ir-content");
+//   } else {
+//     contentRender("en-content");
+//   }
+// });
 // ** end here **
 
-//  ** start here ** (this section is for switching betwean light theme and dark theme)
-
-if (
-  localStorage.getItem("theme") == "" ||
-  localStorage.getItem("theme") == null
-) {
-  document.getElementById("dark-theme-mode").click();
-  localStorage.setItem("theme", "dark-mode");
-} else if (localStorage.getItem("theme") == "dark-mode") {
-  document.getElementById("dark-theme-mode").click();
-} else {
-  document.getElementById("light-theme-mode").click();
-}
-
-function themeRender() {
-  let ls = localStorage.getItem("theme");
-  if (ls == "dark-mode") {
-    document.body.setAttribute("class", "dark-mode");
-  } else {
-    document.body.setAttribute("class", "light-mode");
+$(document).ready(function () {
+  function themApplyed(ele) {
+    if (ele == "" || ele == null) {
+      localStorage.setItem("theme", "dark-mode");
+      themApplyed(localStorage.getItem("theme"));
+    } else if (ele == "dark-mode") {
+      $("body").removeClass("light-mode");
+      $("body").addClass("dark-mode");
+      $("#change-theme-mode-desctop").attr("checked", "");
+      $("#change-theme-mode-mobile").attr("checked", "");
+    } else {
+      $("body").removeClass("dark-mode");
+      $("body").addClass("light-mode");
+    }
   }
-}
 
-(() => {
-  themeRender(localStorage.getItem("theme"));
-})();
-
-document.getElementById("dark-theme-mode").addEventListener("click", () => {
-  let dark = document.getElementById("dark-theme-mode");
-  if (dark.checked) {
-    localStorage.setItem("theme", "dark-mode");
-    themeRender();
-  } else {
-    localStorage.setItem("theme", "light-mode");
-    themeRender();
+  function themeRender(ele) {
+    if ($(ele).prop("checked") == true) {
+      localStorage.setItem("theme", "dark-mode");
+      themApplyed(localStorage.getItem("theme"));
+    } else if ($(ele).prop("checked") == false) {
+      localStorage.setItem("theme", "light-mode");
+      themApplyed(localStorage.getItem("theme"));
+    }
   }
+
+  themApplyed(localStorage.getItem("theme"));
+
+  $("#change-theme-mode-desctop").on("change", function () {
+    $("#change-theme-mode-mobile").prop("checked", this.checked);
+    themeRender(this);
+  });
+  $("#change-theme-mode-mobile").on("change", function () {
+    $("#change-theme-mode-desctop").prop("checked", this.checked);
+    themeRender(this);
+  });
+
+  $(".sidenav").sidenav();
+  $(".collapsible").collapsible();
+  $(".scrollspy").scrollSpy();
+  $(".parallax").parallax();
+  $(".dropdown-trigger").dropdown({
+    alignment: "right",
+    inDuration: 550,
+    outDuration: 550,
+  });
+  $(".carousel.carousel-slider").carousel({
+    fullWidth: true,
+    indicators: true,
+  });
+  setInterval(function () {
+    $(".carousel.carousel-slider").carousel("next");
+  }, 2000);
 });
-
-document.getElementById("light-theme-mode").addEventListener("click", () => {
-  let light = document.getElementById("light-theme-mode");
-  if (light.checked) {
-    localStorage.setItem("theme", "light-mode");
-    themeRender();
-  } else {
-    localStorage.setItem("theme", "dark-mode");
-    themeRender();
-  }
-});
-//  ** end here **

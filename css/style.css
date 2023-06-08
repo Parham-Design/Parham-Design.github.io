@@ -1,3 +1,5 @@
+/**/
+
 :root {
   --opacity-0: 0;
   --opacity-10: 0.1;
@@ -11,15 +13,33 @@
   --opacity-90: 0.9;
   --opacity-100: 1;
 
-  --dark-60: rgb(31, 31, 31);
-  --dark-30: rgb(61, 61, 61);
-  --dark-10: rgb(230, 230, 230);
+  --dark-background: 13, 13, 13;
+  --dark-forground: 21, 21, 21;
+  --light-text: 170, 170, 170;
+  --dark-special-color: 0, 108, 250;
+
+  --light-background: 255, 255, 255;
+  --light-forground: 60, 60, 60;
+  --dark-text: 21, 21, 21;
+  --light-special-color: 0, 108, 250;
+
+  --light-color: 255, 255, 255;
+  --dark-color: 0, 0, 0;
+
+  /*  this 5 variable is for defult theme on loading page  */
+  --background-color: var(--dark-background);
+  --forground-color: var(--dark-forground);
+  --text-primary-color: var(--light-text);
+  --text-secondry-color: var(--dark-text);
+  --primary-color: var(--dark-color);
+  --secondry-color: var(--light-color);
+  --action-color: var(--dark-special-color);
 }
 
 * {
   box-sizing: border-box;
 }
-
+html,
 body {
   width: 100%;
   height: 100%;
@@ -28,332 +48,283 @@ body {
 }
 
 body.dark-mode {
-  --primary-color: 0, 0, 0;
-  --secondry-color: 224, 224, 224;
-  --deActive-special-text-color: 0, 86, 199;
-  --active-special-text-color: 0, 108, 250;
-  --text-color: 192, 192, 192;
+  --background-color: var(--dark-background);
+  --forground-color: var(--dark-forground);
+  --text-primary-color: var(--light-text);
+  --text-secondry-color: var(--dark-text);
+  --primary-color: var(--dark-color);
+  --secondry-color: var(--light-color);
+  --action-color: var(--dark-special-color);
 }
 
 body.light-mode {
-  --primary-color: 224, 224, 224;
-  --secondry-color: 0, 0, 0;
-  --deActive-special-text-color: 0, 108, 250;
-  --active-special-text-color: 0, 86, 199;
-  --text-color: 34, 34, 34;
+  --background-color: var(--light-background);
+  --forground-color: var(--light-forground);
+  --text-primary-color: var(--dark-text);
+  --text-secondry-color: var(--light-text);
+  --primary-color: var(--light-color);
+  --secondry-color: var(--dark-color);
+  --action-color: var(--light-special-color);
 }
 
-button,
-button:hover,
-button:active,
-button:focus {
-  box-shadow: none !important;
-  border: unset !important;
-  border-color: unset !important;
+nav {
+  color: rgb(var(--text-primary-color)) !important;
+  background-color: rgb(var(--background-color)) !important;
 }
 
-.navbar.fixed-top {
-  padding: 0 !important;
-  background-color: rgba(var(--primary-color), var(--opacity-70)) !important;
-  width: 100% !important;
+nav .brand-logo,
+nav a,
+nav ul,
+nav ul li,
+nav ul li a {
+  color: inherit !important;
 }
 
-.container-fluid {
-  padding: 0 1em 0 2em;
+nav .sidenav-trigger {
+  margin: 0 6px;
 }
 
-.navbar-brand,
-.navbar-brand:hover,
-.navbar-brand:focus,
-.navbar-brand:active {
-  margin: 0;
-  color: rgb(var(--text-color));
-}
-
-.my-navbar-toggler-button {
-  width: 3em;
-  height: 3em;
-  padding: 0;
-  color: rgb(var(--text-color));
-}
-
-.my-navbar-toggler-button svg {
-  width: 2em;
-  height: 2em;
-}
-
-.navbar-brand {
-  font-size: 1.5em;
-}
-
-.offcanvas.offcanvas-start {
-  height: 100% !important;
-  width: 320px !important;
-  background-color: rgba(var(--primary-color), var(--opacity-70)) !important;
-}
-
-.offcanvas-header {
-  margin-bottom: 0.5em;
-  padding: 0 1em;
-}
-
-.my-navbar-close-button {
-  background: unset;
-  color: rgb(var(--text-color));
-  padding: 0;
-  width: 4em;
-  height: 4em;
-}
-
-.my-navbar-close-button svg {
-  width: 2em;
-  height: 2em;
-}
-
-.my-profile-image {
-  margin: 0 auto;
-  width: 10em;
-  height: 10em;
-  margin-bottom: 1.5em;
-}
-
-.my-profile-image img {
+.my-mobile-menu-cover {
   width: 100%;
   height: 100%;
+  background: url(../src/grid.jpg);
   background-size: cover;
-  border-radius: 100%;
-  border: 1px solid rgb(var(--active-special-text-color)) !important;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.my-sidebar-menu-item {
-  width: 100%;
-}
-
-.my-sidebar-menu-item::after {
-  content: "";
-  position: absolute;
-  height: 1px;
-  left: 0;
-  margin: 0 1.3em !important;
-  right: 0;
-  visibility: visible;
-  background-color: rgb(var(--text-color));
-}
-
-.my-profile-name h5 {
-  text-align: center;
-  display: block;
-  width: 100%;
-  color: rgb(var(--text-color));
-  font-weight: 800 !important;
-  font-size: 1.7em;
-}
-
-.my-profile-name h5 span {
-  font-size: 0.7em;
-  font-weight: 500 !important;
-}
-
-.my-profile-title h5 {
-  text-align: center;
-  display: block;
-  margin-bottom: 1.3em;
-  font-size: 1em;
-  color: rgb(var(--text-color));
-}
-
-.my-profile-title h5 span {
-  color: rgb(var(--active-special-text-color));
-}
-
-.accordion {
-  --bs-accordion-color: rgb(var(--deActive-special-text-color));
-  --bs-accordion-bg: none;
-  --bs-accordion-border-color: none;
-  --bs-accordion-border-width: 0;
-  --bs-accordion-border-radius: 0;
-  --bs-accordion-inner-border-radius: 0;
-  --bs-accordion-btn-color: rgb(var(--deActive-special-text-color));
-  --bs-accordion-btn-bg: none;
-  --bs-accordion-btn-focus-border-color: none;
-  --bs-accordion-btn-focus-box-shadow: none;
-  --bs-accordion-active-color: rgb(var(--active-special-text-color));
-  --bs-accordion-active-bg: none;
-}
-
-.accordion-button {
-  padding: 1.3em 2em;
-  line-height: 0;
-}
-
-.my-switch-input {
-  float: right !important;
-}
-
-.accordion-body {
-  padding: 0 !important;
-}
-
-.my-language-switch,
-.my-theme-switch {
-  padding: 0.5em 3em;
-  text-align: left;
-}
-
-.my-sidebar-footer {
-  font-size: 1.1em;
-  width: 100%;
-  text-align: center;
-  bottom: 0 !important;
-  position: absolute;
-}
-
-.my-sidebar-footer p {
-  color: rgb(var(--text-color));
-}
-
-.my-sidebar-footer p span {
-  color: rgb(var(--active-special-text-color));
-}
-
-.my-content-area {
+.my-mobile-menu-cover-shade {
   width: 100%;
   height: 100%;
+  background: rgba(0, 0, 0, 0.7);
 }
 
-.my-content-area .my-section {
-  width: 100%;
-  height: 650px;
+.sidenav {
+  background-color: rgb(var(--background-color)) !important;
+}
+
+.user-view {
+  border-bottom: 1px solid black;
+  box-shadow: 0 0 4px 1px black !important;
+}
+
+.sidenav .user-view img.circle {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.sidenav .user-view .switch {
+  width: 64px;
+  height: 64px;
+  float: right;
+}
+
+.sidenav .user-view {
+  padding: 1.5em 1.5em 0 !important;
+}
+
+.sidenav .user-view .name {
+  font-size: 1.1em !important;
+}
+
+.sidenav .divider {
+  background-color: rgb(var(--text-primary-color)) !important;
+}
+
+.sidenav li > a {
+  color: rgb(var(--text-primary-color)) !important;
+  font-size: 1em !important;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 1.5em !important;
+}
+
+.sidenav li > a > i,
+.sidenav li > a > [class^="mdi-"],
+.sidenav li > a li > a > [class*="mdi-"],
+.sidenav li > a > i.material-icons {
+  color: rgb(var(--text-primary-color)) !important;
+}
+
+.nav-wrapper .switch label .lever {
+  vertical-align: unset !important;
+}
+
+.sidenav .user-view span.name {
+  display: block;
+}
+
+.switch label input[type="checkbox"]:checked + .lever {
+  background-color: rgba(100, 100, 100, 0.6);
+}
+
+.switch label .lever {
+  background-color: rgba(200, 200, 200, 0.6);
+}
+
+.switch label .lever:after {
+  background-color: #dadada;
+  background-image: url(../src/sun.svg);
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.switch label input[type="checkbox"]:checked + .lever:after {
+  background-color: #757575;
+  background-image: url(../src/moon.svg);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+nav i,
+nav [class^="mdi-"],
+nav [class*="mdi-"],
+nav i.material-icons {
+  font-size: 1.8em !important;
+}
+
+.brand-logo {
+  font-size: 1.5em !important;
 }
 
 .my-hero-section {
-  width: 100% !important;
-  height: 650px !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
+  width: 100%;
+  height: 600px;
+  background: url(../src/banner.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.my-hero-section-banner-shade {
-  background-color: rgba(var(--primary-color), var(--opacity-80)) !important;
+.my-hero-section-shade {
+  background: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
 }
 
-.my-hero-section-banner-content {
+.my-hero-section-spacer {
   width: 100%;
-  height: 100%;
-  display: table;
-  padding: 2em;
+  height: 200px;
+  background: none;
 }
 
-.my-hero-section-banner-content-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.my-hero-section-banner-content-text-wrapper {
-  background: black;
-  padding: 15px;
-  border-radius: 1em;
-  border: 1px solid white;
-  /* box-shadow: 0 0 2em 2em black; */
-}
-
-.my-hero-section-banner-content-wrapper h1 {
-  margin: 0 !important;
+.carousel-item.white-text {
+  text-align: left !important;
   font-size: 1em;
 }
 
-.my-section {
-  width: 100% !important;
-  height: 650px !important;
-  padding: 0 2em;
+.my-hero-section-text-wrapper {
+  background: rgb(var(--dark-color));
+  padding: 15px;
+  max-width: 400px;
+  border-radius: 1em;
+  border: 1px solid rgb(var(--light-color));
+  margin-bottom: 1em;
 }
 
-.my-section .container {
+.my-hero-section-text-wrapper h1,
+.my-hero-section-text-wrapper h1 span {
   margin: 0 !important;
-  padding: 0 !important;
+  font-size: 1em !important;
 }
 
-.my-section .container h4 {
-  letter-spacing: 0.5em !important;
-  font-size: 0.8em !important;
+.my-section {
+  width: 100%;
+  padding: 2em 0 4em;
+  background-color: rgb(var(--background-color)) !important;
+  color: rgb(var(--text-primary-color)) !important;
 }
 
-.my-section .container h1 {
-  font-size: 1.9em !important;
+.my-section h1 {
+  font-size: 1.8em;
 }
 
-.my-section .container p {
+.my-section h2 {
+  letter-spacing: 0.5em;
+  font-size: 0.7em !important;
+}
+
+.my-section p {
+  font-size: 0.8em;
   text-align: justify;
+}
+
+.parallax-container {
+  height: 300px;
+}
+
+.page-footer {
+  padding-top: 20px;
+  color: rgb(var(--text-primary-color)) !important;
+  background-color: rgb(var(--background-color)) !important;
+}
+
+.page-footer a {
+  color: rgb(var(--text-primary-color)) !important;
+}
+
+.footer-copyright .container {
+  text-align: center !important;
+}
+
+.footer-copyright span {
+  color: rgb(var(--text-primary-color));
+}
+
+.my-footer-copyright-text {
+  color: rgb(var(--action-color)) !important;
 }
 
 /* `xs` applies to small devices (portrait phones, betwean 320px ~ 575px) */
 @media only screen and (min-width: 0px) and (max-width: 575px) {
   body {
-    font-size: 15px;
-  }
-  .my-hero-section {
-    background: url(../src/css-code-wallpaper.jpg);
+    font-size: 15px !important;
   }
 }
 
 /* `sm` applies to small devices (portrait phones, betwean 576px ~ 767px) */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   body {
-    font-size: 15px;
-  }
-  .my-hero-section {
-    background: url(../src/css-code-wallpaper.jpg);
+    font-size: 15px !important;
   }
 }
 
 /* `md` applies to medium devices (landscape phones, betwean 768px ~ 991px) */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   body {
-    font-size: 16px;
-  }
-  .my-hero-section {
-    background: url(../src/css-code-wallpaper.jpg);
+    font-size: 16px !important;
   }
 }
 
 /* `lg` applies to medium devices (tablets, betwean 992px ~ 1199px) */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   body {
-    font-size: 17px;
-  }
-  .my-hero-section {
-    background: url(../src/banner.jpg);
+    font-size: 17px !important;
   }
 }
 
 /* `xl` applies to large devices (desktops, betwean 1200px ~ 1399px) */
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   body {
-    font-size: 18px;
-  }
-  .my-hero-section {
-    background: url(../src/banner.jpg);
+    font-size: 18px !important;
   }
 }
 
 /* `2xl` applies to large devices (large desktops, betwean 1400px ~ 2559px) */
 @media only screen and (min-width: 1400px) and (max-width: 2559px) {
   body {
-    font-size: 20px;
-  }
-  .my-hero-section {
-    background: url(../src/banner.jpg);
+    font-size: 20px !important;
   }
 }
 
 /* `3xl` applies to xtra large devices (large desktops, higher than 2560px) */
-/* @media only screen and (min-width: 2560px) {
+@media only screen and (min-width: 2560px) {
   body {
-    font-size: 22px;
+    font-size: 22px !important;
   }
-  .my-hero-section {
-    background: url(../src/banner.jpg);
-  }
-} */
+}

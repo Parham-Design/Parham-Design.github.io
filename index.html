@@ -3,271 +3,249 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!--Let browser know website is optimized for mobile-->
+
+    <!-- Let browser know website is optimized for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--Import Bootstrap css-->
+    <!-- Import Font-awesome -->
+    <!--
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
+    -->
+
+    <!-- Import Materialize Icons -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
     />
 
-    <!--Import Personal css-->
+    <!-- Import Materialize css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Import Personal css -->
     <link rel="stylesheet" href="./css/style.css" />
 
-    <!--Import Page Title-->
+    <!-- Import Page Title -->
     <title>Parham-Design</title>
   </head>
 
   <body>
-    <nav class="navbar fixed-top">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Parham-Design</a>
-        <button
-          class="navbar-toggler my-navbar-toggler-button"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasNavbar"
-          aria-controls="offcanvasNavbar"
-          aria-label="Toggle navigation"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            class="bi bi-list"
-            viewBox="0 0 16 16"
+    <!-- 
+      <div class="my-sidebar-menu-item">
+        <div class="my-profile-name">
+          <h5>Soheil Zarrinpour<br /><span>( Parham )</span></h5>
+        </div>
+        <div class="my-profile-title">
+          <h5><span>UI</span>/<span>UX</span> Developer In Iran</h5>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo"
+            aria-expanded="false"
+            aria-controls="flush-collapseTwo"
+            id="change-language-button"
           >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            />
-          </svg>
-        </button>
-        <div
-          class="offcanvas offcanvas-start"
-          data-bs-scroll="true"
-          tabindex="-1"
-          id="offcanvasNavbar"
-          aria-labelledby="offcanvasNavbarLabel"
-        >
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-            <button
-              type="button"
-              class="my-navbar-close-button"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            >
+            <div>Change Language</div>
+            <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
                 fill="currentColor"
-                class="bi bi-x-lg"
+                class="bi bi-chevron-down my-button-sufix-down"
                 viewBox="0 0 16 16"
               >
                 <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                  fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
                 />
               </svg>
-            </button>
-          </div>
-
-          <div class="my-profile-image">
-            <img src="./src/soheil.png" alt="Profile Image" />
-          </div>
-
-          <br />
-
-          <div class="my-sidebar-menu-item">
-            <div class="my-profile-name">
-              <h5>Soheil Zarrinpour<br /><span>( Parham )</span></h5>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-chevron-up my-button-sufix-up"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+                />
+              </svg>
             </div>
-            <div class="my-profile-title">
-              <h5><span>UI</span>/<span>UX</span> Developer In Iran</h5>
+          </button>
+        </h2>
+        <div
+          id="flush-collapseTwo"
+          class="accordion-collapse collapse"
+          data-bs-parent="#accordionFlushExample"
+        >
+          <div class="accordion-body">
+            <div class="form-check form-switch my-language-switch">
+              <input
+                class="form-check-input my-switch-input"
+                type="radio"
+                name="language-radio"
+                role="switch"
+                id="en-language"
+                checked
+              />
+              <a href="#">
+                <label class="form-check-label" for="en-language">
+                  Eglish
+                </label>
+              </a>
             </div>
-          </div>
-
-          <div class="my-sidebar-menu-item">
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseTwo"
-                    id="change-language-button"
-                  >
-                    <div>Cgange Language</div>
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-chevron-down my-button-sufix-down"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                        />
-                      </svg>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-chevron-up my-button-sufix-up"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-                        />
-                      </svg>
-                    </div>
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseTwo"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div class="form-check form-switch my-language-switch">
-                      <input
-                        class="form-check-input my-switch-input"
-                        type="radio"
-                        name="language-radio"
-                        role="switch"
-                        id="en-language"
-                        checked
-                      />
-                      <a href="#">
-                        <label class="form-check-label" for="en-language">
-                          Eglish
-                        </label>
-                      </a>
-                    </div>
-                    <div class="form-check form-switch my-language-switch">
-                      <input
-                        class="form-check-input my-switch-input"
-                        type="radio"
-                        name="language-radio"
-                        role="switch"
-                        id="ir-language"
-                      />
-                      <a href="#">
-                        <label class="form-check-label" for="ir-language">
-                          Persian
-                        </label>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseThree"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseThree"
-                    id="change-theme-button"
-                  >
-                    Change Theme
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-chevron-down my-button-sufix-down"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-chevron-up my-button-sufix-up"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-                      />
-                    </svg>
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseThree"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#accordionFlushExample"
-                >
-                  <div class="accordion-body">
-                    <div class="form-check form-switch my-theme-switch">
-                      <input
-                        class="form-check-input my-switch-input"
-                        type="radio"
-                        name="theme-radio"
-                        role="switch"
-                        id="dark-theme-mode"
-                        checked
-                      />
-                      <a href="#">
-                        <label class="form-check-label" for="dark-theme-mode">
-                          Dark Mode
-                        </label>
-                      </a>
-                    </div>
-                    <div class="form-check form-switch my-theme-switch">
-                      <input
-                        class="form-check-input my-switch-input"
-                        type="radio"
-                        name="theme-radio"
-                        role="switch"
-                        id="light-theme-mode"
-                      />
-                      <a href="#">
-                        <label class="form-check-label" for="light-theme-mode">
-                          Light Mode
-                        </label>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="form-check form-switch my-language-switch">
+              <input
+                class="form-check-input my-switch-input"
+                type="radio"
+                name="language-radio"
+                role="switch"
+                id="ir-language"
+              />
+              <a href="#">
+                <label class="form-check-label" for="ir-language">
+                  Persian
+                </label>
+              </a>
             </div>
-          </div>
-          <div class="my-sidebar-footer">
-            <p>
-              Design <span>&copy;</span> in 2023 by
-              <span>PARHAM</span>
-            </p>
           </div>
         </div>
       </div>
-    </nav>
+      <section class="my-section" id="content-render"></section>
+    -->
 
-    <div class="my-content-area">
-      <section class="my-hero-section">
-        <div class="my-hero-section-banner-shade">
-          <div class="my-hero-section-banner-content">
-            <div class="my-hero-section-banner-content-wrapper">
-              <div class="my-hero-section-banner-content-text-wrapper">
-                <h1>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo left">Parham-Design</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger right"
+              ><i class="material-icons">menu</i></a
+            >
+            <ul class="right hide-on-med-and-down">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Hoby's</a></li>
+              <li><a href="#">Skill's</a></li>
+              <li><a href="#">Exprience</a></li>
+              <li><a href="#">Work's</a></li>
+              <li>
+                <div class="switch">
+                  <label>
+                    <input type="checkbox" id="change-theme-mode-desctop" />
+                    <span class="lever"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                  <i class="material-icons"> language </i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">English</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">Persian</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">Korea</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">Japanes</a></li>
+    </ul>
+
+    <ul id="slide-out" class="sidenav">
+      <li>
+        <div class="user-view">
+          <div class="background">
+            <div class="my-mobile-menu-cover">
+              <div class="my-mobile-menu-cover-shade"></div>
+            </div>
+          </div>
+          <a href="#">
+            <img class="circle" src="./src/soheil.png" />
+          </a>
+          <a href="#">
+            <div class="switch">
+              <label>
+                <input type="checkbox" id="change-theme-mode-mobile" />
+                <span class="lever"></span>
+              </label>
+            </div>
+          </a>
+          <a href="#">
+            <span class="white-text name">
+              Soheil zarrinpour
+              <br />
+              (Parham)
+            </span>
+          </a>
+          <a href="#">
+            <span class="white-text email">
+              soheil.zarrinpour.1995@gmail.com
+            </span>
+          </a>
+        </div>
+      </li>
+
+      <li><a class="subheader">Social media</a></li>
+      <li>
+        <a class="waves-effect" href="#!"
+          ><i class="material-icons">cloud</i>Instagram</a
+        >
+      </li>
+      <li>
+        <a class="waves-effect" href="#!"
+          ><i class="material-icons">cloud</i>Telegram</a
+        >
+      </li>
+      <li>
+        <a class="waves-effect" href="#!"
+          ><i class="material-icons">cloud</i>Tweater</a
+        >
+      </li>
+
+      <li><div class="divider"></div></li>
+
+      <li><a class="subheader">Subheader 1</a></li>
+      <li><a class="waves-effect" href="#!">Third Link</a></li>
+
+      <li><div class="divider"></div></li>
+
+      <li><a class="subheader">Subheader 2</a></li>
+      <li><a class="waves-effect" href="#!">First Link</a></li>
+      <li><a class="waves-effect" href="#!">Second Link</a></li>
+      <li><a class="waves-effect" href="#!">Third Link</a></li>
+    </ul>
+
+    <div class="my-hero-section">
+      <div class="my-hero-section-shade">
+        <div class="my-hero-section-spacer"></div>
+        <div class="carousel carousel-slider center">
+          <div class="carousel-fixed-item center">
+            <a class="btn waves-effect cyan darken-3 white-text darken-text-2"
+              >Download CV</a
+            >
+          </div>
+          <div class="carousel-item white-text" href="#">
+            <div class="container">
+              <div class="my-hero-section-text-wrapper">
+                <h1 class="my-hero-section-text">
                   <span style="color: rgb(255, 253, 130)">$</span>
                   <span style="color: yellow">(</span>
                   <span style="color: darkturquoise">document</span>
@@ -300,54 +278,132 @@
               </div>
             </div>
           </div>
+          <div class="carousel-item white-text" href="#two!">
+            <div class="container">
+              <h2>Second Panel</h2>
+              <p class="white-text">This is your second panel</p>
+            </div>
+          </div>
+          <div class="carousel-item white-text" href="#three!">
+            <div class="container">
+              <h2>Third Panel</h2>
+              <p class="white-text">This is your third panel</p>
+            </div>
+          </div>
+          <div class="carousel-item white-text" href="#four!">
+            <div class="container">
+              <h2>Fourth Panel</h2>
+              <p class="white-text">This is your fourth panel</p>
+            </div>
+          </div>
         </div>
-      </section>
-
-      <br /><br /><br />
-
-      <section class="my-section">
-        <div class="container">
-          <h4 class="my-about-section">About me</h4>
-          <h1>Who am i ...?</h1>
-          <p>
-            Hi, my name is soheil zarrinpour. meny people know me as parham. im
-            wed developer ,ui/ux designer. i have meny exprience on working with
-            html5 css3 scss jquery and java script . i also worked with some
-            frame work like angular and vue js . im good to go with materialize
-            css and bootstrap. somtime i develop my websites backend with php or
-            node js, and ofcurse using mysql for data base.
-          </p>
-          <p>
-            Well, you may asked what happend to me. what make me developer.
-            well, i was start to learn about computer managment at the first
-            place but after a meny years was passed i go to the software side of
-            the world of computer. my brothers both are developer and they
-            pushed me to the developering side slowly. and now, after meny
-            training in developering futures like what i mentined befor , i
-            became a wed developer .
-          </p>
-        </div>
-      </section>
-
-      <br /><br /><br /><br /><br />
-
-      <section class="my-section"></section>
-
-      <br /><br /><br /><br /><br />
-
-      <section class="my-section"></section>
-
-      <br /><br /><br /><br /><br />
-
-      <section class="my-section" id="content-render"></section>
+      </div>
     </div>
 
-    <!-- Bootstrap JavaScript -->
+    <div class="my-section">
+      <div class="container">
+        <h2>Who am i ...?!</h2>
+        <h1>Im parham zarrinpour</h1>
+        <p>
+          Hi, my name is soheil zarrinpour. meny people know me as parham. im
+          wed developer ,ui/ux designer. i have meny exprience on working with
+          html5 css3 scss jquery and java script . i also worked with some frame
+          work like angular and vue js . im good to go with materialize css and
+          bootstrap. somtime i develop my websites backend with php or node js,
+          and ofcurse using mysql for data base.
+        </p>
+        <p>
+          Well, you may asked what happend to me. what make me developer. well,
+          i was start to learn about computer managment at the first place but
+          after a meny years was passed i go to the software side of the world
+          of computer. my brothers both are developer and they pushed me to the
+          developering side slowly. and now, after meny training in developering
+          futures like what i mentined befor , i became a wed developer .
+        </p>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="./src/6.jpg" />
+      </div>
+    </div>
+
+    <div class="my-section">
+      <div class="container">
+        <h2>Who am i ...?!</h2>
+        <h1>Im parham zarrinpour</h1>
+        <p>
+          Hi, my name is soheil zarrinpour. meny people know me as parham. im
+          wed developer ,ui/ux designer. i have meny exprience on working with
+          html5 css3 scss jquery and java script . i also worked with some frame
+          work like angular and vue js . im good to go with materialize css and
+          bootstrap. somtime i develop my websites backend with php or node js,
+          and ofcurse using mysql for data base.
+        </p>
+        <p>
+          Well, you may asked what happend to me. what make me developer. well,
+          i was start to learn about computer managment at the first place but
+          after a meny years was passed i go to the software side of the world
+          of computer. my brothers both are developer and they pushed me to the
+          developering side slowly. and now, after meny training in developering
+          futures like what i mentined befor , i became a wed developer .
+        </p>
+      </div>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax">
+        <img src="./src/9.jpg" />
+      </div>
+    </div>
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5>Soheil Zarrinpour</h5>
+            <p>soheil.zarrinpour.1995@gmail.com</p>
+            <p>Bandar-e Anzali, Gilan Province, Iran</p>
+            <p>+98-9387262019</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5>Links</h5>
+            <ul>
+              <li>
+                <a href="#!"> Telegram </a>
+              </li>
+              <li>
+                <a href="#!"> Instagram </a>
+              </li>
+              <li>
+                <a href="#!"> Skype </a>
+              </li>
+              <li>
+                <a href="#!"> Linkedin </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          <span
+            >Design <span class="my-footer-copyright-text">&copy;</span> in 2023
+            by<span class="my-footer-copyright-text">PARHAM</span></span
+          >
+        </div>
+      </div>
+    </footer>
+
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
       crossorigin="anonymous"
     ></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!-- Personal JavaScript -->
     <script type="text/javascript" src="./js/app.js"></script>
