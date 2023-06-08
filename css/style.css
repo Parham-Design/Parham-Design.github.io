@@ -14,12 +14,12 @@
   --opacity-100: 1;
 
   --dark-background: 13, 13, 13;
-  --dark-forground: 21, 21, 21;
+  --dark-forground: 60, 60, 60;
   --light-text: 170, 170, 170;
   --dark-special-color: 0, 108, 250;
 
   --light-background: 255, 255, 255;
-  --light-forground: 60, 60, 60;
+  --light-forground: 110, 110, 110;
   --dark-text: 21, 21, 21;
   --light-special-color: 0, 108, 250;
 
@@ -145,6 +145,9 @@ nav .sidenav-trigger {
 .sidenav li > a li > a > [class*="mdi-"],
 .sidenav li > a > i.material-icons {
   color: rgb(var(--text-primary-color)) !important;
+  margin: 0 10px 0 0;
+  font-size: 1em !important;
+  width: 1em;
 }
 
 .nav-wrapper .switch label .lever {
@@ -213,6 +216,11 @@ nav i.material-icons {
   background: none;
 }
 
+.carousel-fixed-item a {
+  color: rgb(var(--text-primary-color)) !important;
+  background-color: rgb(var(--action-color)) !important;
+}
+
 .carousel-item.white-text {
   text-align: left !important;
   font-size: 1em;
@@ -235,7 +243,7 @@ nav i.material-icons {
 
 .my-section {
   width: 100%;
-  padding: 2em 0 4em;
+  padding: 2.5em 0;
   background-color: rgb(var(--background-color)) !important;
   color: rgb(var(--text-primary-color)) !important;
 }
@@ -278,6 +286,23 @@ nav i.material-icons {
 
 .my-footer-copyright-text {
   color: rgb(var(--action-color)) !important;
+}
+
+.my-certificate-container {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid rgb(var(--text-primary-color)) !important;
+  border-radius: 10px;
+  background: rgb(var(--forground-color)) !important;
+  margin: 10px;
+}
+
+.my-certificate-container a span {
+  color: black !important;
+}
+
+.mt-certificate-wrapper {
+  text-align: center;
 }
 
 /* `xs` applies to small devices (portrait phones, betwean 320px ~ 575px) */
