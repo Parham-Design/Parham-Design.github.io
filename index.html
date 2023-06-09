@@ -128,19 +128,17 @@
     -->
 
     <div class="navbar-fixed">
-      <nav>
+      <nav class="nav-extended">
         <div class="container">
           <div class="nav-wrapper">
-            <a href="#!" class="brand-logo left">Parham-Design</a>
-            <a href="#" data-target="slide-out" class="sidenav-trigger right"
+            <a href="#" class="brand-logo left">Parham-Design</a>
+            <a
+              href="#"
+              data-target="mobileSidenav"
+              class="sidenav-trigger right"
               ><i class="material-icons">menu</i></a
             >
             <ul class="right hide-on-med-and-down">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Hoby's</a></li>
-              <li><a href="#">Skill's</a></li>
-              <li><a href="#">Exprience</a></li>
-              <li><a href="#">Work's</a></li>
               <li>
                 <div class="switch">
                   <label>
@@ -154,7 +152,7 @@
                   class="dropdown-trigger"
                   style="padding-right: 0"
                   href="#!"
-                  data-target="dropdown1"
+                  data-target="languageDropdown"
                 >
                   <i class="material-icons"> language </i>
                 </a>
@@ -162,9 +160,36 @@
             </ul>
           </div>
         </div>
+        <div class="container">
+          <div class="nav-content hide-on-med-and-down">
+            <ul class="tabs tabs-transparent">
+              <li class="tab">
+                <a href="#skills">Skill</a>
+              </li>
+              <li class="tab">
+                <a href="#exprience">Exprience</a>
+              </li>
+              <li class="tab">
+                <a href="#education">Education</a>
+              </li>
+              <li class="tab">
+                <a href="#works">Work</a>
+              </li>
+              <li class="tab">
+                <a href="#certificates">Certificate</a>
+              </li>
+              <li class="tab">
+                <a href="#hobys">Hoby</a>
+              </li>
+              <li class="tab">
+                <a href="#about">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
-    <ul id="dropdown1" class="dropdown-content">
+    <ul id="languageDropdown" class="dropdown-content">
       <li><a href="#!">English</a></li>
       <li class="divider"></li>
       <li><a href="#!">Persian</a></li>
@@ -173,8 +198,7 @@
       <li class="divider"></li>
       <li><a href="#!">Japanes</a></li>
     </ul>
-
-    <ul id="slide-out" class="sidenav">
+    <ul class="sidenav" id="mobileSidenav">
       <li>
         <div class="user-view">
           <div class="background">
@@ -210,57 +234,68 @@
 
       <li><a class="subheader">Social media</a></li>
       <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Instagram</a
-        >
+        <a class="waves-effect" href="#skills">
+          <i class="material-icons">cloud</i>
+          Skills
+        </a>
       </li>
       <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Telegram</a
-        >
+        <a class="waves-effect" href="#exprience">
+          <i class="material-icons">cloud</i>
+          Expriences
+        </a>
       </li>
       <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Tweater</a
-        >
+        <a class="waves-effect" href="#education">
+          <i class="material-icons">cloud</i>
+          Educations
+        </a>
+      </li>
+      <li>
+        <a class="waves-effect" href="#works">
+          <i class="material-icons">cloud</i>
+          Works
+        </a>
+      </li>
+      <li>
+        <a class="waves-effect" href="#certificates">
+          <i class="material-icons">cloud</i>
+          Certificates
+        </a>
+      </li>
+      <li>
+        <a class="waves-effect" href="#hobys">
+          <i class="material-icons">cloud</i>
+          Hobys
+        </a>
+      </li>
+      <li>
+        <a class="waves-effect" href="#about">
+          <i class="material-icons">cloud</i>
+          About
+        </a>
       </li>
 
       <li><div class="divider"></div></li>
-
       <li><a class="subheader">Social media</a></li>
-      <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Instagram</a
-        >
-      </li>
-      <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Telegram</a
-        >
-      </li>
-      <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Tweater</a
-        >
-      </li>
 
-      <li><div class="divider"></div></li>
-
-      <li><a class="subheader">Social media</a></li>
       <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Instagram</a
-        >
+        <a class="waves-effect" href="#!">
+          <i class="material-icons">cloud</i>
+          Instagram
+        </a>
       </li>
       <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Telegram</a
-        >
+        <a class="waves-effect" href="#!">
+          <i class="material-icons">cloud</i>
+          Telegram
+        </a>
       </li>
       <li>
-        <a class="waves-effect" href="#!"
-          ><i class="material-icons">cloud</i>Tweater</a
-        >
+        <a class="waves-effect" href="#!">
+          <i class="material-icons">cloud</i>
+          Tweater
+        </a>
       </li>
 
       <li><div class="divider"></div></li>
@@ -272,7 +307,7 @@
         <div class="carousel carousel-slider center">
           <div class="carousel-fixed-item center">
             <a
-              class="waves-effect waves-light btn cyan darken-3"
+              class="waves-effect waves-light btn cyan darken-3 pulse"
               role="button"
               href="/src/Resume-Soheil-Zarrinpour.pdf"
               download="resume"
@@ -394,10 +429,21 @@
       </div>
     </div>
 
-    <div class="my-section">
+    <div class="my-section" id="skills">
       <div class="container">
+        <h2>What i have ...?!</h2>
+        <h1>Skills</h1>
+        <div class="row"></div>
+      </div>
+    </div>
+
+    <div class="my-section" id="exprience">
+      <div class="container">
+        Frontend Developer Self-employed May 2019 - Present (3 years 8 months +)
+        Frontend Developer Tose'e System Tavana Mar 2019 - Sep 2019 (7 months)
+
         <h2>Who am i ...?!</h2>
-        <h1>Im parham zarrinpour</h1>
+        <h1>Exprience</h1>
         <p>
           Hi, my name is soheil zarrinpour. meny people know me as parham. im
           wed developer ,ui/ux designer. i have meny exprience on working with
@@ -423,10 +469,33 @@
       </div>
     </div>
 
-    <div class="my-section">
+    <div class="my-section" id="education">
       <div class="container">
         <h2>Who am i ...?!</h2>
-        <h1>Im parham zarrinpour</h1>
+        <h1>Education</h1>
+        <p>
+          Hi, my name is soheil zarrinpour. meny people know me as parham. im
+          wed developer ,ui/ux designer. i have meny exprience on working with
+          html5 css3 scss jquery and java script . i also worked with some frame
+          work like angular and vue js . im good to go with materialize css and
+          bootstrap. somtime i develop my websites backend with php or node js,
+          and ofcurse using mysql for data base.
+        </p>
+        <p>
+          Well, you may asked what happend to me. what make me developer. well,
+          i was start to learn about computer managment at the first place but
+          after a meny years was passed i go to the software side of the world
+          of computer. my brothers both are developer and they pushed me to the
+          developering side slowly. and now, after meny training in developering
+          futures like what i mentined befor , i became a wed developer .
+        </p>
+      </div>
+    </div>
+
+    <div class="my-section" id="works">
+      <div class="container">
+        <h2>Who am i ...?!</h2>
+        <h1>Works</h1>
         <p>
           Hi, my name is soheil zarrinpour. meny people know me as parham. im
           wed developer ,ui/ux designer. i have meny exprience on working with
@@ -452,9 +521,9 @@
       </div>
     </div>
 
-    <div class="my-section">
+    <div class="my-section" id="certificates">
       <div class="container">
-        <h1>Certificate</h1>
+        <h1>Certificates</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
           quidem natus voluptatem? Culpa, architecto id.
@@ -518,6 +587,52 @@
         </div>
         <br />
         <hr />
+      </div>
+    </div>
+
+    <div class="my-section" id="hobys">
+      <div class="container">
+        <h2>Who am i ...?!</h2>
+        <h1>Hobys</h1>
+        <p>
+          Hi, my name is soheil zarrinpour. meny people know me as parham. im
+          wed developer ,ui/ux designer. i have meny exprience on working with
+          html5 css3 scss jquery and java script . i also worked with some frame
+          work like angular and vue js . im good to go with materialize css and
+          bootstrap. somtime i develop my websites backend with php or node js,
+          and ofcurse using mysql for data base.
+        </p>
+        <p>
+          Well, you may asked what happend to me. what make me developer. well,
+          i was start to learn about computer managment at the first place but
+          after a meny years was passed i go to the software side of the world
+          of computer. my brothers both are developer and they pushed me to the
+          developering side slowly. and now, after meny training in developering
+          futures like what i mentined befor , i became a wed developer .
+        </p>
+      </div>
+    </div>
+
+    <div class="my-section" id="about">
+      <div class="container">
+        <h2>Who am i ...?!</h2>
+        <h1>About</h1>
+        <p>
+          Hi, my name is soheil zarrinpour. meny people know me as parham. im
+          wed developer ,ui/ux designer. i have meny exprience on working with
+          html5 css3 scss jquery and java script . i also worked with some frame
+          work like angular and vue js . im good to go with materialize css and
+          bootstrap. somtime i develop my websites backend with php or node js,
+          and ofcurse using mysql for data base.
+        </p>
+        <p>
+          Well, you may asked what happend to me. what make me developer. well,
+          i was start to learn about computer managment at the first place but
+          after a meny years was passed i go to the software side of the world
+          of computer. my brothers both are developer and they pushed me to the
+          developering side slowly. and now, after meny training in developering
+          futures like what i mentined befor , i became a wed developer .
+        </p>
       </div>
     </div>
 

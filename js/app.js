@@ -105,4 +105,42 @@ $(document).ready(function () {
   // $(".carousel.carousel-slider").mousedown(function () {
   //   clearInterval(interval);
   // });
+
+  let myskills = [
+    { name: "JavaScript", width: "70%" },
+    { name: "CSS3", width: "80%" },
+    { name: "SCSS", width: "60%" },
+    { name: "HTML5", width: "90%" },
+    { name: "jQuery", width: "80%" },
+    { name: "Angular", width: "70%" },
+    { name: "PHP", width: "30%" },
+    { name: "MySQL", width: "60%" },
+    { name: "Materialize CSS", width: "85%" },
+    { name: "Bootstrap CSS", width: "70%" },
+    { name: "Angular Formly", width: "60%" },
+    { name: "Linux", width: "40%" },
+    { name: "Windows", width: "60%" },
+    { name: "Photoshop", width: "30%" },
+    { name: "Office Word", width: "50%" },
+    { name: "office Powerpoint", width: "50%" },
+    { name: "English", width: "30%" },
+    { name: "Persian", width: "90%" },
+  ];
+
+  let skillparent = $("#skills .row");
+  let firstele =
+    '<div class="col s12 m6 l4"><div class="my-skill-wrapper"><div class="my-skill-title-wrapper"><h3 class="left">';
+  let secondele = '</h3><p class="right">';
+  let thirdele =
+    '</p></div><div class="progress"><div class="determinate" style="width: ';
+  let forthele = '"></div></div></div></div>';
+  (() => {
+    for (let i = 0; i < myskills.length; i++) {
+      let name = myskills[i].name;
+      let width = myskills[i].width;
+      skillparent.append(
+        firstele + name + secondele + width + thirdele + width + forthele
+      );
+    }
+  })();
 });
