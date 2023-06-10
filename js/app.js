@@ -107,24 +107,12 @@ $(document).ready(function () {
   // });
 
   let myskills = [
-    { name: "JavaScript", width: "70%" },
-    { name: "CSS3", width: "80%" },
-    { name: "SCSS", width: "60%" },
-    { name: "HTML5", width: "90%" },
+    { name: "JavaScript", width: "65%" },
     { name: "jQuery", width: "80%" },
     { name: "Angular", width: "70%" },
-    { name: "PHP", width: "30%" },
-    { name: "MySQL", width: "60%" },
-    { name: "Materialize CSS", width: "85%" },
-    { name: "Bootstrap CSS", width: "70%" },
-    { name: "Angular Formly", width: "60%" },
-    { name: "Linux", width: "40%" },
-    { name: "Windows", width: "60%" },
-    { name: "Photoshop", width: "30%" },
-    { name: "Office Word", width: "50%" },
-    { name: "office Powerpoint", width: "50%" },
-    { name: "English", width: "30%" },
-    { name: "Persian", width: "90%" },
+    { name: "HTML5", width: "90%" },
+    { name: "CSS3 & SCSS", width: "70%" },
+    { name: "Materialize & Bootstrap", width: "85%" },
   ];
 
   let skillparent = $("#skills .row");
@@ -143,4 +131,11 @@ $(document).ready(function () {
       );
     }
   })();
+
+  document.addEventListener("DOMContentLoaded", function () {
+    window.setTimeout(
+      document.querySelector("svg").classList.add("animated"),
+      1000
+    );
+  });
 });

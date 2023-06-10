@@ -67,9 +67,23 @@ body.light-mode {
   --action-color: var(--light-special-color);
 }
 
+body {
+  background-color: rgb(var(--background-color)) !important;
+}
+
+.container {
+  max-width: unset !important;
+}
+
+.background-svg {
+  width: 100%;
+  height: 100%;
+}
+
 nav {
   color: rgb(var(--text-primary-color)) !important;
-  background-color: rgb(var(--background-color)) !important;
+  background: rgba(var(--background-color), var(--opacity-80));
+  box-shadow: unset;
 }
 
 nav .brand-logo,
@@ -204,58 +218,56 @@ nav i.material-icons {
 }
 
 .brand-logo {
-  font-size: 1.5em !important;
+  font-size: 1.2em !important;
 }
 
 .my-hero-section {
   width: 100%;
-  height: 600px;
-  background: url(../src/banner.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.my-hero-section-shade {
-  background: rgba(0, 0, 0, 0.7);
-  width: 100%;
   height: 100%;
+  padding-top: 2.5em;
 }
 
-.my-hero-section-spacer {
+.my-hero-section.row .col {
+  padding: 0;
+}
+
+.my-hero-section-image-wrapper img {
   width: 100%;
-  height: 200px;
-  background: none;
+  max-width: 400px;
+  max-height: 400px;
+  background-size: cover;
+  transform: rotateY(180deg);
 }
 
-.carousel-fixed-item a {
-  color: rgb(var(--text-primary-color)) !important;
-  background-color: rgb(var(--action-color)) !important;
+.my-hero-section-text {
+  background: rgb(var(--background-color));
+  margin-bottom: 20px;
 }
 
-.carousel-item.white-text {
-  text-align: left !important;
+.my-hero-section-text h3 {
+  font-size: 1.3em;
+}
+
+.my-hero-section-text p {
   font-size: 1em;
 }
 
-.my-hero-section-text-wrapper {
-  background: rgb(var(--dark-color));
-  padding: 15px;
-  max-width: 400px;
-  border-radius: 1em;
-  border: 1px solid rgb(var(--light-color));
-  margin-bottom: 1em;
+.my-hero-section-button {
+  background: rgb(var(--background-color));
+  width: 100%;
+  text-align: center;
 }
 
-.my-hero-section-text-wrapper h1,
-.my-hero-section-text-wrapper h1 span {
-  margin: 0 !important;
-  font-size: 1em !important;
+.my-hero-section-button a {
+  background: rgb(103 58 111) !important;
+  color: rgb(var(--primary-color));
+  text-transform: unset;
+  font-weight: 700;
 }
 
 .my-section {
   width: 100%;
-  padding: 2.5em 0;
+  padding: 0 0 20px;
   background-color: rgb(var(--background-color)) !important;
   color: rgb(var(--text-primary-color)) !important;
 }
@@ -346,54 +358,60 @@ nav i.material-icons {
   text-align: center;
 }
 
-/* `xs` applies to small devices (portrait phones, betwean 320px ~ 575px) */
-@media only screen and (min-width: 0px) and (max-width: 576px) {
+/* `sm` applies to small devices (phones <= 600px) */
+@media only screen and (max-width: 600px) {
   body {
     font-size: 15px !important;
   }
-}
-
-/* `sm` applies to small devices (portrait phones, betwean 576px ~ 767px) */
-@media only screen and (min-width: 577px) and (max-width: 768px) {
-  body {
-    font-size: 15px !important;
+  .container {
+    width: 90% !important;
+  }
+  .my-hero-section-image-wrapper {
+    text-align: center;
   }
 }
 
-/* `md` applies to medium devices (landscape phones, betwean 768px ~ 991px) */
-@media only screen and (min-width: 769px) and (max-width: 992px) {
+/* `md` applies to medium devices (phones or tablets, betwean 601px ~ 992px) */
+@media only screen and (min-width: 601px) and (max-width: 992px) {
   body {
     font-size: 16px !important;
   }
+  .container {
+    width: 85% !important;
+  }
+  .my-hero-section-image-wrapper {
+    text-align: center;
+  }
 }
 
-/* `lg` applies to medium devices (tablets, betwean 992px ~ 1199px) */
+/* `lg` applies to large devices (tablets, betwean 993px ~ 1200px) */
 @media only screen and (min-width: 993px) and (max-width: 1200px) {
   body {
     font-size: 17px !important;
   }
   .container {
-    width: 81% !important;
+    width: 85% !important;
+  }
+  .my-hero-section-image-wrapper {
+    text-align: right;
+  }
+  .my-hero-section-text-wrapper {
+    padding: 5em 0 !important;
   }
 }
 
-/* `xl` applies to large devices (desktops, betwean 1200px ~ 1399px) */
-@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+/* `xl` applies to xtra large devices (desktops > 1200px) */
+@media only screen and (min-width: 1201px) {
   body {
     font-size: 18px !important;
   }
-}
-
-/* `2xl` applies to large devices (large desktops, betwean 1400px ~ 2559px) */
-@media only screen and (min-width: 1401px) and (max-width: 2560px) {
-  body {
-    font-size: 20px !important;
+  .container {
+    width: 80% !important;
   }
-}
-
-/* `3xl` applies to xtra large devices (large desktops, higher than 2560px) */
-@media only screen and (min-width: 2561px) {
-  body {
-    font-size: 22px !important;
+  .my-hero-section-image-wrapper {
+    text-align: right;
+  }
+  .my-hero-section-text-wrapper {
+    padding: 5em 0 !important;
   }
 }
