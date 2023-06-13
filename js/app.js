@@ -1,141 +1,101 @@
-//  ** start here ** (this section is for switching betwean persian language and english language)
+/*------------------------------ Modify by Parham Design in 2023 ------------------------------*/
 
-// let en_content = "hello world";
-// let ir_content = "سلام دنیا";
+/*-------------------------------------- Personal Scripts -------------------------------------*/
 
-// function contentRender(content_type) {
-//   if (content_type == "en-content") {
-//     document.getElementById("content-render").innerText = en_content;
-//   } else {
-//     document.getElementById("content-render").innerText = ir_content;
-//   }
-// }
+let sections = document.querySelectorAll("section");
+let navLinks = document.querySelectorAll("header nav a");
+let sidenavLinks = document.querySelectorAll(
+  ".my_sidenav .my_mobile_menu_links ul li a"
+);
+let mobilMenuIcon = document.querySelector("#mobile_menu_trigger");
+let navbar = document.querySelector(".navbar");
+let sidenavOverlay = document.querySelector(".sidenav_overlay");
+let sidenav = document.querySelector(".my_sidenav");
+let closeSidenavMenu = document.querySelector("#close_sidenav_menu");
 
-// (() => {
-//   contentRender("en-content");
-// })();
+mobilMenuIcon.onclick = () => {
+  sidenav.classList.add("active");
+  sidenavOverlay.classList.add("active");
+};
 
-// document.getElementById("en-language").addEventListener("click", () => {
-//   let en = document.getElementById("en-language");
-//   if (en.checked) {
-//     contentRender("en-content");
-//   } else {
-//     contentRender("ir-content");
-//   }
-// });
+closeSidenavMenu.onclick = () => {
+  sidenav.classList.remove("active");
+  sidenavOverlay.classList.remove("active");
+};
 
-// document.getElementById("ir-language").addEventListener("click", () => {
-//   let ir = document.getElementById("ir-language");
-//   if (ir.checked) {
-//     contentRender("ir-content");
-//   } else {
-//     contentRender("en-content");
-//   }
-// });
-// ** end here **
-
-$(document).ready(function () {
-  function themApplyed(ele) {
-    if (ele == "" || ele == null) {
-      localStorage.setItem("theme", "dark-mode");
-      themApplyed(localStorage.getItem("theme"));
-    } else if (ele == "dark-mode") {
-      $("body").removeClass("light-mode");
-      $("body").addClass("dark-mode");
-      $("#change-theme-mode-desctop").attr("checked", "");
-      $("#change-theme-mode-mobile").attr("checked", "");
-    } else {
-      $("body").removeClass("dark-mode");
-      $("body").addClass("light-mode");
-    }
-  }
-
-  function themeRender(ele) {
-    if ($(ele).prop("checked") == true) {
-      localStorage.setItem("theme", "dark-mode");
-      themApplyed(localStorage.getItem("theme"));
-    } else if ($(ele).prop("checked") == false) {
-      localStorage.setItem("theme", "light-mode");
-      themApplyed(localStorage.getItem("theme"));
-    }
-  }
-
-  themApplyed(localStorage.getItem("theme"));
-
-  $("#change-theme-mode-desctop").on("change", function () {
-    $("#change-theme-mode-mobile").prop("checked", this.checked);
-    themeRender(this);
-  });
-  $("#change-theme-mode-mobile").on("change", function () {
-    $("#change-theme-mode-desctop").prop("checked", this.checked);
-    themeRender(this);
-  });
-
-  $(".sidenav").sidenav();
-  $(".collapsible").collapsible();
-  $(".scrollspy").scrollSpy();
-  $(".parallax").parallax();
-  $(".dropdown-trigger").dropdown({
-    alignment: "right",
-    inDuration: 550,
-    outDuration: 550,
-  });
-  $(".carousel.carousel-slider").carousel({
-    fullWidth: true,
-    indicators: true,
-    duration: 500,
-  });
-
-  var interval = setInterval(function () {
-    $(".carousel.carousel-slider").carousel("next");
-  }, 5000);
-  $(".carousel.carousel-slider").mouseleave(function () {
-    interval = setInterval(function () {
-      $(".carousel.carousel-slider").carousel("next");
-    }, 5000);
-  });
-  $(".carousel.carousel-slider").mouseenter(function () {
-    clearInterval(interval);
-  });
-  // $(".carousel.carousel-slider").mouseup(function () {
-  //   interval = setInterval(function () {
-  //     $(".carousel.carousel-slider").carousel("next");
-  //   }, 5000);
-  // });
-  // $(".carousel.carousel-slider").mousedown(function () {
-  //   clearInterval(interval);
-  // });
-
-  let myskills = [
-    { name: "JavaScript", width: "65%" },
-    { name: "jQuery", width: "80%" },
-    { name: "Angular", width: "70%" },
-    { name: "HTML5", width: "90%" },
-    { name: "CSS3 & SCSS", width: "70%" },
-    { name: "Materialize & Bootstrap", width: "85%" },
-  ];
-
-  let skillparent = $("#skills .row");
-  let firstele =
-    '<div class="col s12 m6 l4"><div class="my-skill-wrapper"><div class="my-skill-title-wrapper"><h3 class="left">';
-  let secondele = '</h3><p class="right">';
-  let thirdele =
-    '</p></div><div class="progress"><div class="determinate" style="width: ';
-  let forthele = '"></div></div></div></div>';
-  (() => {
-    for (let i = 0; i < myskills.length; i++) {
-      let name = myskills[i].name;
-      let width = myskills[i].width;
-      skillparent.append(
-        firstele + name + secondele + width + thirdele + width + forthele
-      );
-    }
-  })();
-
-  document.addEventListener("DOMContentLoaded", function () {
-    window.setTimeout(
-      document.querySelector("svg").classList.add("animated"),
-      1000
-    );
-  });
+sidenavLinks.forEach((link) => {
+  link.onclick = () => {
+    mobilMenuIcon.classList.remove("bx-x");
+    sidenav.classList.remove("active");
+    sidenavOverlay.classList.remove("active");
+  };
 });
+sidenavOverlay.onclick = () => {
+  mobilMenuIcon.classList.remove("bx-x");
+  sidenav.classList.remove("active");
+  sidenavOverlay.classList.remove("active");
+};
+
+window.onscroll = () => {
+  sections.forEach((section) => {
+    let top = window.scrollY;
+    let offset = section.offsetTop - 150;
+    let height = section.offsetHeight;
+    let id = section.getAttribute("id");
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        document
+          .querySelector("header nav a[href*=" + id + "]")
+          .classList.add("active");
+      });
+      sidenavLinks.forEach((link) => {
+        link.classList.remove("active");
+        document
+          .querySelector(
+            ".my_sidenav .my_mobile_menu_links ul li a[href*=" + id + "]"
+          )
+          .classList.add("active");
+      });
+    }
+  });
+  let header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 100);
+};
+
+/*------------------------------------ end Personal Scripts -----------------------------------*/
+
+/*------------------------------------ Scroll Reveal Scripts ----------------------------------*/
+
+ScrollReveal({
+  reset: true,
+  distance: "80px",
+  duration: 2000,
+  delay: 200,
+});
+ScrollReveal().reveal(".hero_section_content, .section_heading", {
+  origin: "top",
+});
+ScrollReveal().reveal(
+  ".hero_section_image, .services_container, .works_box, .contact_section form",
+  {
+    origin: "bottom",
+  }
+);
+ScrollReveal().reveal(".hero_section_content h1, .about_section_image", {
+  origin: "left",
+});
+
+/*---------------------------------- end Scroll Reveal Scripts --------------------------------*/
+
+/*-------------------------------------- Typed JS Scripts -------------------------------------*/
+
+const typed = new Typed(".multiple_text", {
+  strings: ["Web Designer", "Frontend Developer", "Based in Iran"],
+  typeSpeed: 50,
+  backSpeed: 10,
+  backDelay: 2000,
+  cursorChar: "_",
+  loop: true,
+});
+/*------------------------------------ end Typed JS Scripts -----------------------------------*/

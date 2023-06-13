@@ -7,24 +7,16 @@
     <!-- Let browser know website is optimized for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Import Font-awesome -->
-    <!--
-      <link
-        rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
-    -->
+    <!-- Import Box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Import Materialize Icons -->
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-    />
-
-    <!-- Import Materialize css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
 
     <!-- Import Personal css -->
@@ -35,502 +27,357 @@
   </head>
 
   <body>
-    <!-- Hey! My name is Denise. I am a web & font designer based in Utah.
-         I have
-      been working as a freelance designer and front-end developer since 2007.
-      I’ve always been someone who has both a creative and a logical side. When
-      I discovered web design in college, I realized it would be the perfect
-      fit. I could use my creative side to design and my logical side to code.
-      As a bonus, being both designer and developer allows me to make sure no
-      detail is lost in translation. -->
-
-    <!-- 
-      <div class="my-sidebar-menu-item">
-        <div class="my-profile-name">
-          <h5>Soheil Zarrinpour<br /><span>( Parham )</span></h5>
-        </div>
-        <div class="my-profile-title">
-          <h5><span>UI</span>/<span>UX</span> Developer In Iran</h5>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#flush-collapseTwo"
-            aria-expanded="false"
-            aria-controls="flush-collapseTwo"
-            id="change-language-button"
-          >
-            <div>Change Language</div>
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-chevron-down my-button-sufix-down"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-chevron-up my-button-sufix-up"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
-                />
-              </svg>
-            </div>
-          </button>
-        </h2>
-        <div
-          id="flush-collapseTwo"
-          class="accordion-collapse collapse"
-          data-bs-parent="#accordionFlushExample"
-        >
-          <div class="accordion-body">
-            <div class="form-check form-switch my-language-switch">
-              <input
-                class="form-check-input my-switch-input"
-                type="radio"
-                name="language-radio"
-                role="switch"
-                id="en-language"
-                checked
-              />
-              <a href="#">
-                <label class="form-check-label" for="en-language">
-                  Eglish
-                </label>
-              </a>
-            </div>
-            <div class="form-check form-switch my-language-switch">
-              <input
-                class="form-check-input my-switch-input"
-                type="radio"
-                name="language-radio"
-                role="switch"
-                id="ir-language"
-              />
-              <a href="#">
-                <label class="form-check-label" for="ir-language">
-                  Persian
-                </label>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section class="my-section" id="content-render"></section>
-      -->
-
-    <div class="navbar-fixed">
-      <nav class="nav-extended">
-        <div class="container">
-          <div class="nav-wrapper">
-            <a href="#" class="brand-logo left">Parham-Design</a>
-            <a
-              href="#"
-              data-target="mobileSidenav"
-              class="sidenav-trigger right"
-              ><i class="material-icons">menu</i></a
-            >
-            <ul class="right hide-on-med-and-down">
-              <li class="tab">
-                <a href="#skills">Skill</a>
-              </li>
-              <li class="tab">
-                <a href="#works">Work</a>
-              </li>
-              <li class="tab">
-                <a href="#certificates">Certificate</a>
-              </li>
-              <li class="tab">
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <div class="switch">
-                  <label>
-                    <input type="checkbox" id="change-theme-mode-desctop" />
-                    <span class="lever"></span>
-                  </label>
-                </div>
-              </li>
-              <li>
-                <a
-                  class="dropdown-trigger"
-                  style="padding-right: 0"
-                  href="#!"
-                  data-target="languageDropdown"
-                >
-                  <i class="material-icons"> language </i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+    <header class="header">
+      <h1 class="brand_logo">Parham-Design</h1>
+      <i class="bx bx-menu" id="mobile_menu_trigger"></i>
+      <nav class="navbar">
+        <a href="#hero_section" class="active">Home</a>
+        <a href="#about_section">About</a>
+        <a href="#services_section">Services</a>
+        <a href="#works_section">Works</a>
+        <a href="#contact_section">Contact</a>
       </nav>
-    </div>
-    <ul id="languageDropdown" class="dropdown-content">
-      <li><a href="#!">English</a></li>
-      <li class="divider"></li>
-      <li><a href="#!">Persian</a></li>
-      <li class="divider"></li>
-      <li><a href="#!">Korea</a></li>
-      <li class="divider"></li>
-      <li><a href="#!">Japanes</a></li>
-    </ul>
-    <ul class="sidenav" id="mobileSidenav">
-      <li>
-        <div class="user-view">
-          <div class="background">
-            <div class="my-mobile-menu-cover">
-              <div class="my-mobile-menu-cover-shade"></div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s6 m6">
-              <a href="#">
-                <img class="circle" src="./src/soheil.png" />
-              </a>
-            </div>
-            <div class="col s6 m6">
-              <a href="#">
-                <div class="switch">
-                  <label>
-                    <input type="checkbox" id="change-theme-mode-mobile" />
-                    <span class="lever"></span>
-                  </label>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col s12 m12">
-            <a href="#">
-              <span class="white-text name">
-                Soheil zarrinpour
-                <br />
-                (Parham)
-              </span>
-            </a>
-          </div>
-          <div class="col s12 m12">
-            <a href="#">
-              <span class="white-text email">
-                soheil.zarrinpour.1995@gmail.com
-              </span>
-            </a>
+    </header>
+
+    <div class="my_sidenav" id="mobileSidenav">
+      <div class="my_mobile_menu_cover">
+        <div class="my_mobile_menu_cover_background">
+          <div class="my_mobile_menu_cover_image">
+            <div class="my_mobile_menu_cover_shade"></div>
           </div>
         </div>
-      </li>
-
-      <li><a class="subheader">Social media</a></li>
-      <li>
-        <a class="waves-effect" href="#skills">
-          <i class="material-icons">cloud</i>
-          Skills
-        </a>
-      </li>
-      <li>
-        <a class="waves-effect" href="#works">
-          <i class="material-icons">cloud</i>
-          Works
-        </a>
-      </li>
-      <li>
-        <a class="waves-effect" href="#certificates">
-          <i class="material-icons">cloud</i>
-          Certificates
-        </a>
-      </li>
-      <li>
-        <a class="waves-effect" href="#about">
-          <i class="material-icons">cloud</i>
-          About
-        </a>
-      </li>
-
-      <li><div class="divider"></div></li>
-      <li><a class="subheader">Social media</a></li>
-
-      <li>
-        <a class="waves-effect" href="#!">
-          <i class="material-icons">cloud</i>
-          Instagram
-        </a>
-      </li>
-      <li>
-        <a class="waves-effect" href="#!">
-          <i class="material-icons">cloud</i>
-          Telegram
-        </a>
-      </li>
-      <li>
-        <a class="waves-effect" href="#!">
-          <i class="material-icons">cloud</i>
-          Tweater
-        </a>
-      </li>
-
-      <li><div class="divider"></div></li>
-    </ul>
-
-    <section class="my-section">
-      <div class="container">
-        <div class="my-hero-section row">
-          <div class="col s12 m12 l6 right my-hero-section-image-wrapper">
-            <img src="./src/Developer activity-amico.png" alt="" />
+        <div class="my_mobile_menu_profile">
+          <img src="./src/soheil.png" />
+          <div>
+            <span>
+              <i class="bx bxs-moon" style="display: none"></i>
+              <i class="bx bxs-sun"></i>
+            </span>
+            <span>
+              <i class="material-icons"> language </i>
+            </span>
+            <span id="close_sidenav_menu">
+              <i
+                class="bx bx-arrow-back"
+                style="transform: rotateY(180deg)"
+              ></i>
+            </span>
           </div>
-          <div class="col s12 m12 l6 left my-hero-section-text-wrapper">
-            <div class="my-hero-section-text">
-              <h3>
-                Hey!
-                <br />
-                My name is Parham. I am a web designer based in Iran.
-              </h3>
-              <p>
-                I have been working as a freelance designer and front-end
-                developer since 2019. I've always been someone who has both a
-                creative and a logical side. I could use my creative side to
-                design and my logical side to code. As a bonus, being both
-                designer and developer allows me to make sure no detail is lost
-                in translation.
-              </p>
-            </div>
-            <div class="my-hero-section-button">
-              <a
-                class="waves-effect waves-light btn"
-                role="button"
-                href="/src/Resume-Soheil-Zarrinpour.pdf"
-                download="resume"
-                target="_blank"
-              >
-                <i class="material-icons right"> download </i>
-                Download CV
-              </a>
-            </div>
+        </div>
+        <div class="my_mobile_menu_title">
+          <div>
+            <h1 class="name">
+              Soheil zarrinpour
+              <br />
+              <p>(Parham)</p>
+            </h1>
+          </div>
+          <h2>
+            <p class="email">soheil.zarrinpour.1995@gmail.com</p>
+          </h2>
+        </div>
+      </div>
+      <div class="my_mobile_menu_links">
+        <h1>
+          <a class="subheader"> Page Links </a>
+        </h1>
+        <ul>
+          <li>
+            <a href="#hero_section" class="active">
+              <i class="bx bxs-home"></i>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about_section">
+              <i class="bx bxs-info-circle"></i>
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#services_section">
+              <i class="bx bxs-offer"></i>
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#works_section">
+              <i class="bx bxs-briefcase"></i>
+              Works
+            </a>
+          </li>
+          <li>
+            <a href="#contact_section">
+              <i class="bx bxs-contact"></i>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hero section design -->
+    <section class="hero_section" id="hero_section">
+      <div class="hero_section_content">
+        <h3>Hey!</h3>
+        <h1>My name is Parham.</h1>
+        <h3>
+          I'm a Freelancer
+          <span class="multiple_text"></span>
+        </h3>
+        <p>
+          I have been working as a freelance designer and front-end developer
+          since 2019. I've always been someone who has both a creative and a
+          logical side. I could use my creative side to design and my logical
+          side to code. As a bonus, being both designer and developer allows me
+          to make sure no detail is lost in translation.
+        </p>
+        <!-- <div class="social_media">
+          <a href="facebook.com" target="_blank"
+            ><i class="bx bxl-facebook"></i
+          ></a>
+          <a href="twitter.com" target="_blank"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a href="instagram.com" target="_blank"
+            ><i class="bx bxl-instagram-alt"></i
+          ></a>
+          <a href="linkedin.com" target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+        </div> -->
+        <a
+          class="btn"
+          role="button"
+          href="/src/Resume-Soheil-Zarrinpour.pdf"
+          download="resume"
+          target="_blank"
+        >
+          Download CV
+          <i class="material-icons"> download </i>
+        </a>
+      </div>
+      <div class="hero_section_image">
+        <img src="./src/Developer activity-amico.png" alt="Hero_section" />
+      </div>
+    </section>
+
+    <!-- About section design -->
+    <section class="about_section" id="about_section">
+      <div class="about_section_image">
+        <img
+          src="./src/intro-section-illustration.png"
+          alt="Soheil Zarrinpour"
+        />
+      </div>
+      <div class="about_section_content">
+        <h2 class="section_heading">About <span>Me</span></h2>
+        <h3>Web Designer & Frontend Developer</h3>
+        <p>
+          Hi, my name is soheil zarrinpour. meny people know me as parham. im
+          wed developer ,ui/ux designer. i have meny exprience on working with
+          html5 css3 scss jquery and java script . i also worked with some frame
+          work like angular and vue js . im good to go with materialize css and
+          bootstrap. somtime i develop my websites backend with php or node js,
+          and ofcurse using mysql for data base.
+        </p>
+        <p>
+          Well, you may asked what happend to me. what make me developer. well,
+          i was start to learn about computer managment at the first place but
+          after a meny years was passed i go to the software side of the world
+          of computer. my brothers both are developer and they pushed me to the
+          developering side slowly. and now, after meny training in developering
+          futures like what i mentined befor , i became a wed developer .
+        </p>
+        <button class="btn" role="button" href="" target="_blank">
+          Read More
+        </button>
+      </div>
+    </section>
+
+    <!-- Service section design -->
+    <section class="services_section" id="services_section">
+      <h2 class="section_heading">My <span>Services</span></h2>
+      <div class="services_container">
+        <div class="services_box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Web Development</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+            numquam fuga. Assumenda cum animi vero minus quos, dolorem excepturi
+            porro?
+          </p>
+          <button class="btn" role="button" href="" target="_blank">
+            Read More
+          </button>
+        </div>
+        <div class="services_box">
+          <!-- <i class="bx bx-palette"></i> -->
+          <!-- <i class="bx bx-desktop"></i> -->
+          <i class="bx bxs-devices"></i>
+          <h3>Graphic Design</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+            numquam fuga. Assumenda cum animi vero minus quos, dolorem excepturi
+            porro?
+          </p>
+          <button class="btn" role="button" href="" target="_blank">
+            Read More
+          </button>
+        </div>
+        <div class="services_box">
+          <i class="bx bx-extension"></i>
+          <h3>UI/UX Design</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi,
+            numquam fuga. Assumenda cum animi vero minus quos, dolorem excepturi
+            porro?
+          </p>
+          <button class="btn" role="button" href="" target="_blank">
+            Read More
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work section design -->
+    <section class="works_section" id="works_section">
+      <h2 class="section_heading">Latest <span>Projects</span></h2>
+      <div class="works_container">
+        <div class="works_box">
+          <img src="./src/1.jpg" alt="First Work" />
+          <div class="works_layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+              quis!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="works_box">
+          <img src="./src/2.png" alt="Second Work" />
+          <div class="works_layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+              quis!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="works_box">
+          <img src="./src/3.jpg" alt="Third Work" />
+          <div class="works_layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+              quis!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="works_box">
+          <img src="./src/6.jpg" alt="Forth Work" />
+          <div class="works_layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+              quis!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="works_box">
+          <img src="./src/4.jpg" alt="Fifth Work" />
+          <div class="works_layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+              quis!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="works_box">
+          <img src="./src/9.jpg" alt="Sixth Work" />
+          <div class="works_layer">
+            <h4>Web Design</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+              quis!
+            </p>
+            <a href="#"><i class="bx bx-link-external"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <hr />
-
-    <section class="my-section" id="works">
-      <div class="container">
-        <h1 class="center">Service</h1>
-        <p>
-          Hi, my name is soheil zarrinpour. meny people know me as parham. im
-          wed developer ,ui/ux designer. i have meny exprience on working with
-          html5 css3 scss jquery and java script . i also worked with some frame
-          work like angular and vue js . im good to go with materialize css and
-          bootstrap. somtime i develop my websites backend with php or node js,
-          and ofcurse using mysql for data base.
-        </p>
-        <p>
-          Well, you may asked what happend to me. what make me developer. well,
-          i was start to learn about computer managment at the first place but
-          after a meny years was passed i go to the software side of the world
-          of computer. my brothers both are developer and they pushed me to the
-          developering side slowly. and now, after meny training in developering
-          futures like what i mentined befor , i became a wed developer .
-        </p>
-      </div>
+    <!-- Contact section design -->
+    <section class="contact_section" id="contact_section">
+      <h2 class="section_heading">Contact <span>Me!</span></h2>
+      <form action="#">
+        <div class="input_box">
+          <input type="text" placeholder="Full Name" />
+          <input type="email" placeholder="Email Address" />
+        </div>
+        <div class="input_box">
+          <input type="number" placeholder="Mobile Number" />
+          <input type="text" placeholder="Email Subject" />
+        </div>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Type your message"
+        ></textarea>
+        <input type="submit" value="Send Message" class="btn" />
+      </form>
     </section>
 
-    <hr />
-
-    <div class="my-section" id="skills">
-      <div class="container">
-        <h1>Skills</h1>
-        <div class="row"></div>
-      </div>
-    </div>
-
-    <div class="parallax-container">
-      <div class="parallax">
-        <img src="./src/6.jpg" />
-      </div>
-    </div>
-
-    <div class="my-section" id="works">
-      <div class="container">
-        <h1>Works</h1>
-        <p>
-          Hi, my name is soheil zarrinpour. meny people know me as parham. im
-          wed developer ,ui/ux designer. i have meny exprience on working with
-          html5 css3 scss jquery and java script . i also worked with some frame
-          work like angular and vue js . im good to go with materialize css and
-          bootstrap. somtime i develop my websites backend with php or node js,
-          and ofcurse using mysql for data base.
-        </p>
-        <p>
-          Well, you may asked what happend to me. what make me developer. well,
-          i was start to learn about computer managment at the first place but
-          after a meny years was passed i go to the software side of the world
-          of computer. my brothers both are developer and they pushed me to the
-          developering side slowly. and now, after meny training in developering
-          futures like what i mentined befor , i became a wed developer .
-        </p>
-      </div>
-    </div>
-
-    <div class="parallax-container">
-      <div class="parallax">
-        <img src="./src/9.jpg" />
-      </div>
-    </div>
-
-    <!-- <div class="my-section" id="certificates">
-      <div class="container">
-        <h1>Certificates</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-          quidem natus voluptatem? Culpa, architecto id.
-        </p>
-        <br />
-        <hr />
-        <br /><br />
-        <div class="row">
-          <div class="col s12 m6 l6 mt-certificate-wrapper">
-            <div class="my-certificate-container">
-              <a
-                href="https://www.testdome.com/certificates/c01b31465dd44be595138d155061e3c9"
-                class="testdome-certificate-stamp silver"
-                target="_blank"
-              >
-                <span class="testdome-certificate-name">soheil zarrinpour</span>
-                <span class="testdome-certificate-test-name">HTML/CSS</span>
-                <span class="testdome-certificate-card-logo"
-                  >TestDome<br />Certificate</span
-                >
-              </a>
-              <script>
-                var stylesheet =
-                    "https://www.testdome.com/content/source/stylesheets/embed.css",
-                  link = document.createElement("link");
-                (link.href = stylesheet),
-                  (link.type = "text/css"),
-                  (link.rel = "stylesheet"),
-                  (link.media = "screen,print"),
-                  document.getElementsByTagName("head")[0].appendChild(link);
-              </script>
-            </div>
+    <!-- Footer section design -->
+    <footer class="footer_section" id="contact_section">
+      <div class="my_footer_content">
+        <div class="my_footer_details">
+          <div class="social_media">
+            <a href="facebook.com" target="_blank"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a href="twitter.com" target="_blank"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+            <a href="instagram.com" target="_blank"
+              ><i class="bx bxl-instagram-alt"></i
+            ></a>
+            <a href="linkedin.com" target="_blank"
+              ><i class="bx bxl-linkedin"></i
+            ></a>
           </div>
-          <div class="col s12 m6 l6 mt-certificate-wrapper">
-            <div class="my-certificate-container">
-              <a
-                href="https://www.testdome.com/certificates/2977c6eb7ad042e08866b915ca0edd7e"
-                class="testdome-certificate-stamp silver"
-                target="_blank"
-              >
-                <span class="testdome-certificate-name">soheil zarrinpour</span>
-                <span class="testdome-certificate-test-name"
-                  >Web Developer</span
-                >
-                <span class="testdome-certificate-card-logo"
-                  >TestDome<br />Certificate</span
-                >
-              </a>
-              <script>
-                var stylesheet =
-                    "https://www.testdome.com/content/source/stylesheets/embed.css",
-                  link = document.createElement("link");
-                (link.href = stylesheet),
-                  (link.type = "text/css"),
-                  (link.rel = "stylesheet"),
-                  (link.media = "screen,print"),
-                  document.getElementsByTagName("head")[0].appendChild(link);
-              </script>
-            </div>
-          </div>
-        </div>
-        <br />
-        <hr />
-      </div>
-    </div> -->
-
-    <div class="my-section" id="about">
-      <div class="container">
-        <h1>About</h1>
-        <p>
-          Hi, my name is soheil zarrinpour. meny people know me as parham. im
-          wed developer ,ui/ux designer. i have meny exprience on working with
-          html5 css3 scss jquery and java script . i also worked with some frame
-          work like angular and vue js . im good to go with materialize css and
-          bootstrap. somtime i develop my websites backend with php or node js,
-          and ofcurse using mysql for data base.
-        </p>
-        <p>
-          Well, you may asked what happend to me. what make me developer. well,
-          i was start to learn about computer managment at the first place but
-          after a meny years was passed i go to the software side of the world
-          of computer. my brothers both are developer and they pushed me to the
-          developering side slowly. and now, after meny training in developering
-          futures like what i mentined befor , i became a wed developer .
-        </p>
-      </div>
-    </div>
-
-    <!-- <footer class="page-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col l6 s12">
-            <h5>Soheil Zarrinpour</h5>
-            <p>soheil.zarrinpour.1995@gmail.com</p>
-            <p>Bandar-e Anzali, Gilan Province, Iran</p>
-            <p>+98-9387262019</p>
-          </div>
-          <div class="col l4 offset-l2 s12">
-            <h5>Links</h5>
-            <ul>
-              <li>
-                <a href="#!"> Telegram </a>
-              </li>
-              <li>
-                <a href="#!"> Instagram </a>
-              </li>
-              <li>
-                <a href="#!"> Skype </a>
-              </li>
-              <li>
-                <a href="#!"> Linkedin </a>
-              </li>
-            </ul>
-          </div>
+          <p>soheil.zarrinpour.1995@gmail.com</p>
+          <p>Bandar-e Anzali, Gilan Province, Iran</p>
+          <p>+98-9387262019</p>
         </div>
       </div>
-      <div class="footer-copyright">
-        <div class="container">
-          <span
-            >Design <span class="my-footer-copyright-text">&copy;</span> in 2023
-            by <span class="my-footer-copyright-text">Parham</span></span
-          >
-        </div>
+      <div class="my_footer_copyright">
+        <h3>
+          Design <span>&copy;</span> in 2023 by
+          <span>Parham-Design</span>
+        </h3>
       </div>
-    </footer> -->
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.js"
-      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
-      crossorigin="anonymous"
-    ></script>
+    </footer>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <div class="sidenav_overlay"></div>
 
-    <!-- Personal JavaScript -->
+    <div class="drag_target" style="display: none"></div>
+
+    <!-- Scroll Reveal Script -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Typed JS Script -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <!-- Personal Script -->
     <script type="text/javascript" src="./js/app.js"></script>
   </body>
 </html>
