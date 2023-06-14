@@ -1,6 +1,7 @@
 /*------------------------------ Modify by Parham Design in 2023 ------------------------------*/
 
 /*-------------------------------------- Personal Scripts -------------------------------------*/
+
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
 let sidenavLinks = document.querySelectorAll(
@@ -83,6 +84,7 @@ sidenavLinks.forEach((link) => {
     sidenavOverlay.classList.remove("active");
   };
 });
+
 sidenavOverlay.onclick = () => {
   mobilMenuIcon.classList.remove("bx-x");
   sidenav.classList.remove("active");
@@ -151,4 +153,5 @@ const typed = new Typed(".multiple_text", {
   cursorChar: "_",
   loop: true,
 });
+
 /*------------------------------------ end Typed JS Scripts -----------------------------------*/
