@@ -3,42 +3,27 @@
 /* start refrens style */
 
 :root {
-  --opacity-0: 0;
-  --opacity-10: 0.1;
-  --opacity-20: 0.2;
-  --opacity-30: 0.3;
-  --opacity-40: 0.4;
-  --opacity-50: 0.5;
-  --opacity-60: 0.6;
-  --opacity-70: 0.7;
-  --opacity-80: 0.8;
-  --opacity-90: 0.9;
-  --opacity-100: 1;
+  --opacity_0: 0;
+  --opacity_10: 0.1;
+  --opacity_20: 0.2;
+  --opacity_30: 0.3;
+  --opacity_40: 0.4;
+  --opacity_50: 0.5;
+  --opacity_60: 0.6;
+  --opacity_70: 0.7;
+  --opacity_80: 0.8;
+  --opacity_90: 0.9;
+  --opacity_100: 1;
 
-  /* --dark-background: 13, 13, 13;
-  --dark-forground: 60, 60, 60;
-  --light-text: 170, 170, 170;
-  --dark-special-color: 0, 108, 250;
-
-  --light-background: 255, 255, 255;
-  --light-forground: 110, 110, 110;
-  --dark-text: 21, 21, 21;
-  --light-special-color: 0, 108, 250;
-
-  --light-color: 255, 255, 255;
-  --dark-color: 0, 0, 0; */
-
-  /* --background-color: 13, 13, 13;
-  --forground-color: 60, 60, 60;
-  --text-color: 255, 255, 255;
-  --special-color: 103 58 111; */
-
-  --background-color: 250, 245, 245;
-  --forground-color: 240, 235, 235;
-  --text-color: 21, 21, 21;
-  /* --special-color: 0, 108, 250; */
-  /* --special-color: 103 58 111; */
-  --special-color: 186, 104, 200;
+  --dark_background: 13, 13, 13;
+  --light_background: 250, 245, 245;
+  --dark_forground: 30, 30, 30;
+  --light_forground: 240, 235, 235;
+  --dark_color: 0, 0, 0;
+  --light_color: 255, 255, 255;
+  --special_color: 0, 108, 250;
+  /* --special_element_color: 103 58 111; */
+  /* --special_element_color: 186, 104, 200; */
 }
 
 /* end refrens style */
@@ -65,29 +50,46 @@ html {
 }
 
 body {
-  background-color: rgb(var(--background-color));
-  color: rgb(var(--text-color));
+  background-color: rgb(var(--background_color));
+  color: rgb(var(--text_primary_color));
+}
+
+body.dark_mode {
+  --background_color: var(--dark_background);
+  --forground_color: var(--dark_forground);
+  --text_primary_color: var(--light_color);
+  --text_secondry_color: var(--dark_color);
+  --special_element_color: var(--special_color);
+}
+
+body.light_mode {
+  --background_color: var(--light_background);
+  --forground_color: var(--light_forground);
+  --text_primary_color: var(--dark_color);
+  --text_secondry_color: var(--light_color);
+  --special_element_color: var(--special_color);
 }
 
 span {
-  color: rgb(var(--special-color));
+  color: rgb(var(--special_element_color));
 }
 
 .btn {
   display: inline-block;
   padding: 1rem 2.8rem;
-  background-color: rgb(var(--special-color));
   border-radius: 4rem;
-  box-shadow: 0 0 1rem rgb(var(--special-color));
+  background-color: transparent;
+  border: 2px solid rgb(var(--special_element_color));
   font-size: 1.6rem;
-  color: rgb(var(--background-color));
+  color: rgb(var(--text_primary_color));
   letter-spacing: 0.1rem;
   font-weight: 600;
   transition: 0.5s ease;
 }
 
 .btn:hover {
-  box-shadow: none;
+  color: rgb(var(--text_secondry_color));
+  background-color: rgb(var(--special_element_color));
 }
 
 .section_heading {
@@ -107,7 +109,7 @@ span {
   left: 0;
   width: 100%;
   padding: 2rem 9%;
-  background-color: rgb(var(--background-color));
+  background-color: rgb(var(--background_color));
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -120,29 +122,32 @@ span {
 
 .brand_logo {
   font-size: 2.5rem;
-  color: rgb(var(--text-color));
+  color: rgb(var(--text_primary_color));
   cursor: default;
   font-weight: 600;
 }
 
 #mobile_menu_trigger {
   font-size: 3.6rem;
-  color: rgb(var(--text-color));
+  color: rgb(var(--text_primary_color));
   display: none;
 }
 
 /* .navbar {} */
 
-.navbar a {
+.navbar a,
+.navbar span i {
   font-size: 1.7rem;
-  color: rgb(var(--text-color));
+  color: rgb(var(--text_primary_color));
   margin-left: 4rem;
   transition: 0.3s;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  color: rgb(var(--special-color));
+  color: rgb(var(--special_element_color));
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 /* end header style */
@@ -164,7 +169,7 @@ span {
   will-change: transform;
   backface-visibility: hidden;
   transform: translateX(-105%);
-  background-color: rgb(var(--background-color)) !important;
+  background-color: rgb(var(--background_color)) !important;
   transition: 0.5s ease;
 }
 .my_sidenav.active {
@@ -175,8 +180,8 @@ span {
   position: relative;
   padding: 2rem 2rem 0;
   margin-bottom: 1rem;
-  border-bottom: 0.1rem solid black;
-  box-shadow: 0 0 0.5rem 0.1rem black !important;
+  border-bottom: 0.1rem solid rgb(var(--text_primary_color));
+  box-shadow: 0 0 0.5rem 0.1rem rgb(var(--text_primary_color)) !important;
 }
 
 .my_mobile_menu_cover_background {
@@ -234,7 +239,7 @@ span {
 
 .my_mobile_menu_title h1,
 .my_mobile_menu_title h2 {
-  color: aliceblue;
+  color: white;
   display: block;
 }
 
@@ -257,7 +262,7 @@ span {
 
 .my_mobile_menu_links h1 a {
   font-size: 1.8rem;
-  color: rgb(var(--text-color));
+  color: rgb(var(--text_primary_color));
   display: block;
   line-height: 48px;
   padding: 0 2.5rem;
@@ -283,13 +288,13 @@ span {
 .my_mobile_menu_links ul li:hover,
 .my_mobile_menu_links ul li:active,
 .my_mobile_menu_links ul li:focus {
-  background-color: rgb(var(--forground-color), var(--opacity-20));
-  border-right: 4px solid rgb(var(--special-color));
+  background-color: rgb(var(--forground_color), var(--opacity_20));
+  border-right: 4px solid rgb(var(--special_element_color));
 }
 
 .my_mobile_menu_links ul li a {
   font-size: 1.7rem;
-  color: rgb(var(--text-color));
+  color: rgb(var(--text_primary_color));
   text-decoration: none;
   padding: 0 2.5rem;
   cursor: pointer;
@@ -300,21 +305,21 @@ span {
 .my_mobile_menu_links ul li:hover a,
 .my_mobile_menu_links ul li:focus a,
 .my_mobile_menu_links ul li:active a {
-  color: rgb(var(--special-color));
+  color: rgb(var(--special_element_color));
   font-size: 2rem;
   padding-left: 3rem;
   letter-spacing: 0.1rem;
 }
 
 .my_mobile_menu_links ul li a.active {
-  color: rgb(var(--special-color));
+  color: rgb(var(--special_element_color));
   font-size: 2rem;
   padding-left: 3rem;
   letter-spacing: 0.1rem;
 }
 
 .my_mobile_menu_links ul li a i {
-  color: rgb(var(--text-color));
+  color: rgb(var(--text_primary_color));
   margin: 0 1rem 0 0;
   font-size: 1.9rem !important;
   width: 2rem;
@@ -335,7 +340,7 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(var(--background-color));
+  background-color: rgb(var(--background_color));
 }
 
 .hero_section_content {
@@ -393,7 +398,7 @@ span {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  background-color: rgb(var(--forground-color));
+  background-color: rgb(var(--forground_color));
 }
 
 .about_section_image img {
@@ -426,7 +431,7 @@ span {
 
 .services_section {
   padding: 10rem 9%;
-  background-color: rgb(var(--background-color));
+  background-color: rgb(var(--background_color));
 }
 
 .services_section h2 {
@@ -443,22 +448,22 @@ span {
 
 .services_container .services_box {
   flex: 1 1 30rem;
-  background-color: rgb(var(--forground-color));
+  background-color: rgb(var(--forground_color));
   padding: 3rem 2rem 4rem;
   border-radius: 2rem;
   text-align: center;
-  border: 0.2rem solid rgb(var(--forground-color));
+  border: 0.2rem solid rgb(var(--forground_color));
   transition: 0.5s ease;
 }
 
 .services_container .services_box:hover {
-  border-color: rgb(var(--special-color));
+  border-color: rgb(var(--special_element_color));
   transform: scale(1.02);
 }
 
 .services_box i {
   font-size: 7rem;
-  color: rgb(var(--special-color));
+  color: rgb(var(--special_element_color));
 }
 
 .services_box h3 {
@@ -478,7 +483,7 @@ span {
 
 .works_section {
   padding: 10rem 9%;
-  background-color: rgb(var(--forground-color));
+  background-color: rgb(var(--forground_color));
 }
 
 .works_section h2 {
@@ -495,7 +500,7 @@ span {
 .works_container .works_box {
   position: relative;
   border-radius: 2rem;
-  box-shadow: 0 0 1rem rgb(var(--text-color));
+  box-shadow: 0 0 1rem rgb(var(--text_primary_color));
   overflow: hidden;
   display: flex;
 }
@@ -516,8 +521,8 @@ span {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-    rgba(var(--background-color), var(--opacity-80)),
-    rgb(var(--special-color))
+    rgba(var(--background_color), var(--opacity_80)),
+    rgb(var(--special_element_color))
   );
   display: flex;
   justify-content: center;
@@ -527,7 +532,7 @@ span {
   padding: 5rem 4rem 0;
   transform: translateY(100%);
   transition: 0.5s ease;
-  color: rgb(var(--text-color));
+  color: rgb(var(--text_primary_color));
 }
 
 .works_box:hover .works_layer {
@@ -565,7 +570,7 @@ span {
 
 .contact_section {
   padding: 10rem 9%;
-  background-color: rgb(var(--background-color));
+  background-color: rgb(var(--background_color));
 }
 
 .contact_section h2 {
@@ -589,8 +594,8 @@ span {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.3rem;
-  color: black;
-  background-color: #eaeaea;
+  color: rgb(var(--text_primary_color));
+  background-color: rgb(var(--forground_color));
   border-radius: 0.8rem;
   margin: 0.7rem 0;
 }
@@ -624,7 +629,7 @@ span {
 
 .footer_section {
   padding: 2rem 9% 0;
-  background-color: rgb(var(--forground-color));
+  background-color: rgb(var(--forground_color));
 }
 
 .my_footer_content {
@@ -643,18 +648,18 @@ span {
   width: 4rem;
   height: 4rem;
   background: transparent;
-  border: 0.2rem solid rgb(var(--special-color));
+  border: 0.2rem solid rgb(var(--special_element_color));
   border-radius: 50%;
   font-size: 2rem;
-  color: rgb(var(--special-color));
+  color: rgb(var(--special_element_color));
   margin: 3rem 1.5rem 3rem 0;
   transition: 0.5s ease;
 }
 
 .social_media a:hover {
-  background-color: rgb(var(--special-color));
-  color: rgb(var(--background-color));
-  box-shadow: 0 0 1rem rgb(var(--special-color));
+  background-color: rgb(var(--special_element_color));
+  color: rgb(var(--background_color));
+  box-shadow: 0 0 1rem rgb(var(--special_element_color));
 }
 
 .my_footer_details a {
@@ -674,12 +679,12 @@ span {
 }
 
 .my_footer_copyright h3 {
-  color: rgb(var(--text-color));
-  font-size: 1.5rem;
+  color: rgb(var(--text_primary_color));
+  font-size: 1.7rem;
 }
 
 .my_footer_copyright h3 span {
-  color: rgb(var(--special-color));
+  color: rgb(var(--special_element_color));
 }
 
 /* end Footer section style */
@@ -691,7 +696,7 @@ span {
   left: 0;
   right: 0;
   opacity: 0;
-  background-color: rgb(0, 0, 0, var(--opacity-70));
+  background-color: rgb(0, 0, 0, var(--opacity_70));
   z-index: 997;
   backdrop-filter: blur(10px);
   display: none;

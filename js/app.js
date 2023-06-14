@@ -1,7 +1,6 @@
 /*------------------------------ Modify by Parham Design in 2023 ------------------------------*/
 
 /*-------------------------------------- Personal Scripts -------------------------------------*/
-
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
 let sidenavLinks = document.querySelectorAll(
@@ -12,6 +11,60 @@ let navbar = document.querySelector(".navbar");
 let sidenavOverlay = document.querySelector(".sidenav_overlay");
 let sidenav = document.querySelector(".my_sidenav");
 let closeSidenavMenu = document.querySelector("#close_sidenav_menu");
+let myThemeToggleButton = document.querySelectorAll(".my_theme_toggle_button");
+
+function themeButtonIconChanger(event) {
+  if (event == "dark_mode") {
+    myThemeToggleButton.forEach((btn) => {
+      if (btn.classList.contains("bxs-sun")) {
+        btn.classList.remove("bxs-sun");
+        btn.classList.add("bxs-moon");
+      } else {
+        btn.classList.add("bxs-moon");
+      }
+    });
+  } else {
+    myThemeToggleButton.forEach((btn) => {
+      if (btn.classList.contains("bxs-moon")) {
+        btn.classList.remove("bxs-moon");
+        btn.classList.add("bxs-sun");
+      } else {
+        btn.classList.add("bxs-sun");
+      }
+    });
+  }
+}
+
+function themApplyed(event) {
+  if (event == "" || event == null) {
+    localStorage.setItem("theme", "light_mode");
+    themApplyed(localStorage.getItem("theme"));
+  } else if (event == "dark_mode") {
+    document.body.classList.add(event);
+    themeButtonIconChanger(event);
+    if (document.body.classList.contains("light_mode")) {
+      document.body.classList.remove("light_mode");
+    }
+  } else {
+    document.body.classList.add(event);
+    themeButtonIconChanger(event);
+    if (document.body.classList.contains("dark_mode")) {
+      document.body.classList.remove("dark_mode");
+    }
+  }
+}
+
+function changeTheme() {
+  if (document.body.classList.contains("dark_mode")) {
+    localStorage.setItem("theme", "light_mode");
+    themApplyed("light_mode");
+  } else {
+    localStorage.setItem("theme", "dark_mode");
+    themApplyed("dark_mode");
+  }
+}
+
+themApplyed(localStorage.getItem("theme"));
 
 mobilMenuIcon.onclick = () => {
   sidenav.classList.add("active");

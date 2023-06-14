@@ -26,7 +26,7 @@
     <title>Parham-Design</title>
   </head>
 
-  <body>
+  <body class="light_mode">
     <header class="header">
       <h1 class="brand_logo">Parham-Design</h1>
       <i class="bx bx-menu" id="mobile_menu_trigger"></i>
@@ -36,6 +36,12 @@
         <a href="#services_section">Services</a>
         <a href="#works_section">Works</a>
         <a href="#contact_section">Contact</a>
+        <span>
+          <i class="bx my_theme_toggle_button" onclick="changeTheme()"></i>
+        </span>
+        <span>
+          <i class="material-icons"> language </i>
+        </span>
       </nav>
     </header>
 
@@ -50,8 +56,7 @@
           <img src="./src/soheil.png" />
           <div>
             <span>
-              <i class="bx bxs-moon" style="display: none"></i>
-              <i class="bx bxs-sun"></i>
+              <i class="bx my_theme_toggle_button" onclick="changeTheme()"></i>
             </span>
             <span>
               <i class="material-icons"> language </i>
@@ -120,32 +125,17 @@
     <section class="hero_section" id="hero_section">
       <div class="hero_section_content">
         <h3>Hey!</h3>
-        <h1>My name is Parham.</h1>
+        <h1>I'm a Freelancer</h1>
         <h3>
-          I'm a Freelancer
           <span class="multiple_text"></span>
         </h3>
         <p>
-          I have been working as a freelance designer and front-end developer
-          since 2019. I've always been someone who has both a creative and a
-          logical side. I could use my creative side to design and my logical
-          side to code. As a bonus, being both designer and developer allows me
-          to make sure no detail is lost in translation.
+          I have been working as a freelance web designer and front-end
+          developer since 2019. I've always been someone who has both a creative
+          and a logical side. I could use my creative side to design and my
+          logical side to code. As a bonus, being both designer and developer
+          allows me to make sure no detail is lost in translation.
         </p>
-        <!-- <div class="social_media">
-          <a href="facebook.com" target="_blank"
-            ><i class="bx bxl-facebook"></i
-          ></a>
-          <a href="twitter.com" target="_blank"
-            ><i class="bx bxl-twitter"></i
-          ></a>
-          <a href="instagram.com" target="_blank"
-            ><i class="bx bxl-instagram-alt"></i
-          ></a>
-          <a href="linkedin.com" target="_blank"
-            ><i class="bx bxl-linkedin"></i
-          ></a>
-        </div> -->
         <a
           class="btn"
           role="button"
@@ -316,7 +306,7 @@
     <!-- Contact section design -->
     <section class="contact_section" id="contact_section">
       <h2 class="section_heading">Contact <span>Me!</span></h2>
-      <form action="#">
+      <form action="" id="contact_form">
         <div class="input_box">
           <input type="text" placeholder="Full Name" />
           <input type="email" placeholder="Email Address" />
@@ -378,6 +368,6 @@
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
     <!-- Personal Script -->
-    <script type="text/javascript" src="./js/app.js"></script>
+    <script src="./js/app.js"></script>
   </body>
 </html>
