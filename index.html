@@ -313,21 +313,42 @@
       <h2 class="section_heading">Contact <span>Me!</span></h2>
       <form action="" id="contact_form">
         <div class="input_box">
-          <input type="text" placeholder="Full Name" />
-          <input type="email" placeholder="Email Address" />
+          <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            placeholder="Full Name"
+          />
+          <input
+            type="email"
+            name="user_email"
+            id="user_email"
+            placeholder="Email Address"
+          />
         </div>
         <div class="input_box">
-          <input type="number" placeholder="Mobile Number" />
-          <input type="text" placeholder="Email Subject" />
+          <input
+            type="number"
+            name="user_number"
+            id="user_number"
+            placeholder="Mobile Number"
+          />
+          <input
+            type="text"
+            name="user_subject"
+            id="user_subject"
+            placeholder="Email Subject"
+          />
         </div>
         <textarea
-          name=""
-          id=""
+          name="user_message"
+          id="user_message"
           cols="30"
           rows="10"
           placeholder="Type your message"
         ></textarea>
-        <input type="submit" value="Send Message" class="btn" />
+        <p id="contact_form_stage_message"></p>
+        <input type="submit" class="btn" value="Send message" />
       </form>
     </section>
 
@@ -365,6 +386,9 @@
     <div class="sidenav_overlay"></div>
 
     <div class="drag_target" style="display: none"></div>
+
+    <!-- Email JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!-- Scroll Reveal Script -->
     <script src="https://unpkg.com/scrollreveal"></script>

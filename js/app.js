@@ -155,3 +155,49 @@ const typed = new Typed(".multiple_text", {
 });
 
 /*------------------------------------ end Typed JS Scripts -----------------------------------*/
+
+/*-------------------------------------- Email JS Scripts -------------------------------------*/
+
+let contactForm = document.getElementById("contact_form");
+let stateMessage = document.getElementById("contact_form_stage_message");
+
+let serviceId = "service_uxwxq54";
+let templateId = "template_c1hcety";
+let publicKey = "JYl7NUg6kT0g6eNNL";
+
+let sendEmail = (event) => {
+  event.preventDefault();
+  emailjs
+    .send(
+      serviceId,
+      templateId,
+      {
+        user_name: document.getElementById("user_name").value,
+        user_email: document.getElementById("user_email").value,
+        user_number: document.getElementById("user_number").value,
+        user_subject: document.getElementById("user_subject").value,
+        user_message: document.getElementById("user_message").value,
+      },
+      publicKey
+    )
+    .then(
+      (seccess) => {
+        stateMessage.textContent = "Message sended successfully";
+        contactForm.reset();
+        setTimeout(() => {
+          stateMessage.textContent = "";
+        }, 5000);
+      },
+      (error) => {
+        stateMessage.textContent =
+          "message not sended (error : " + error.status + ")";
+        setTimeout(() => {
+          stateMessage.textContent = "";
+        }, 5000);
+      }
+    );
+};
+
+contactForm.addEventListener("submit", sendEmail);
+
+/*------------------------------------ end Email JS Scripts -----------------------------------*/
