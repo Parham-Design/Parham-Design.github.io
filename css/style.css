@@ -625,13 +625,45 @@ span {
   overflow: scroll;
   text-align: justify;
   resize: none;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
 }
 
 .contact_section form textarea::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+}
+
+.contact_form_success_message_box {
+  font-size: 1.5rem;
+  padding: 3rem;
+  width: 300px;
+  margin: 0 auto;
+  background: #a9ff53;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  display: none;
+  transition: 0.5s ease;
+}
+
+.contact_form_success_message_box.active {
+  display: block;
+}
+
+.contact_form_error_message_box {
+  font-size: 1.5rem;
+  padding: 3rem;
+  width: 300px;
+  margin: 0 auto;
+  background: #ff5353;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  display: none;
+  transition: 0.5s ease;
+}
+
+.contact_form_error_message_box.active {
+  display: block;
 }
 
 .contact_section form .btn {

@@ -159,7 +159,12 @@ const typed = new Typed(".multiple_text", {
 /*-------------------------------------- Email JS Scripts -------------------------------------*/
 
 let contactForm = document.getElementById("contact_form");
-let stateMessage = document.getElementById("contact_form_stage_message");
+let stateSuccessMessage = document.getElementById(
+  "contact_form_stage_success_message"
+);
+let stateErrorMessage = document.getElementById(
+  "contact_form_stage_error_message"
+);
 
 let serviceId = "service_uxwxq54";
 let templateId = "template_c1hcety";
@@ -182,17 +187,21 @@ let sendEmail = (event) => {
     )
     .then(
       (seccess) => {
-        stateMessage.textContent = "Message sended successfully";
+        stateSuccessMessage.classList.add("active");
+        stateSuccessMessage.textContent = "Message sended successfully";
         contactForm.reset();
         setTimeout(() => {
-          stateMessage.textContent = "";
+          stateSuccessMessage.classList.remove("active");
+          stateSuccessMessage.textContent = "";
         }, 5000);
       },
       (error) => {
-        stateMessage.textContent =
+        stateErrorMessage.classList.add("active");
+        stateErrorMessage.textContent =
           "message not sended (error : " + error.status + ")";
         setTimeout(() => {
-          stateMessage.textContent = "";
+          stateErrorMessage.classList.remove("active");
+          stateErrorMessage.textContent = "";
         }, 5000);
       }
     );
