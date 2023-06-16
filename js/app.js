@@ -4,15 +4,110 @@
 
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
-let sidenavLinks = document.querySelectorAll(
-  ".my_sidenav .my_mobile_menu_links ul li a"
-);
+let sidenavLinks = document.querySelectorAll(".my_mobile_menu_links ul li a");
 let mobilMenuIcon = document.querySelector("#mobile_menu_trigger");
 let navbar = document.querySelector(".navbar");
 let sidenavOverlay = document.querySelector(".sidenav_overlay");
 let sidenav = document.querySelector(".my_sidenav");
 let closeSidenavMenu = document.querySelector("#close_sidenav_menu");
 let myThemeToggleButton = document.querySelectorAll(".my_theme_toggle_button");
+let myLanguageChangeMenu = document.querySelector(
+  ".my_language_list_drop_down"
+);
+let languages = ["english", "persian", "japanes", "korean"];
+// let pageText = {
+//   english: [
+//     {
+//       elementId: "Node 1",
+//       text: "#this is the first test for jason",
+//     },
+//     {
+//       elementId: "Node 2",
+//       text: "#this is the second test for jason",
+//     },
+//   ],
+//   persian: [
+//     {
+//       elementId: "Node 1",
+//       text: "#this is the test jason",
+//     },
+//   ],
+//   japanes: [
+//     {
+//       elementId: "Node 1",
+//       text: "#this is the test jason",
+//     },
+//   ],
+//   korean: [
+//     {
+//       elementId: "Node 1",
+//       text: "#this is the test jason",
+//     },
+//   ],
+// };
+
+window.addEventListener("click", function (e) {
+  if (e.target.closest(".language_change_btn") === null) {
+    myLanguageChangeMenu.setAttribute("style", "display: none;");
+  }
+});
+
+function openLanguageMenu(event) {
+  if (myLanguageChangeMenu.style.display == "block") {
+    myLanguageChangeMenu.setAttribute("style", "display: none;");
+  } else {
+    myLanguageChangeMenu.setAttribute(
+      "style",
+      "display: block; top: calc(" +
+        event.path[0].offsetTop +
+        "px + 35px); left: calc(" +
+        event.path[0].offsetLeft +
+        "px - 165px);"
+    );
+  }
+}
+
+function checkLanguage() {
+  languages.forEach((language) => {
+    if (document.body.classList.contains(language)) {
+      document.body.classList.remove(language);
+    }
+  });
+}
+
+function changeLanguage(event) {
+  if (event == "" || event == null) {
+    localStorage.setItem("language", "english");
+    changeLanguage(localStorage.getItem("language"));
+  } else {
+    checkLanguage();
+    localStorage.setItem("language", event);
+    document.body.classList.add(event);
+    if (event == "english") {
+      pageText.english.forEach((res) => {
+        // document.getElementById(res.elementId).textContent = res.text;
+        document.getElementById(res.elementId).innerHTML = res.text;
+      });
+    } else if (event == "persian") {
+      pageText.persian.forEach((res) => {
+        // document.getElementById(res.elementId).textContent = res.text;
+        document.getElementById(res.elementId).innerHTML = res.text;
+      });
+    } else if (event == "japanes") {
+      pageText.japanes.forEach((res) => {
+        // document.getElementById(res.elementId).textContent = res.text;
+        document.getElementById(res.elementId).innerHTML = res.text;
+      });
+    } else if (event == "korean") {
+      pageText.korean.forEach((res) => {
+        // document.getElementById(res.elementId).textContent = res.text;
+        document.getElementById(res.elementId).innerHTML = res.text;
+      });
+    }
+  }
+}
+
+changeLanguage(localStorage.getItem("language"));
 
 function themeButtonIconChanger(event) {
   if (event == "dark_mode") {
@@ -36,10 +131,10 @@ function themeButtonIconChanger(event) {
   }
 }
 
-function themApplyed(event) {
+function themeApplyed(event) {
   if (event == "" || event == null) {
     localStorage.setItem("theme", "light_mode");
-    themApplyed(localStorage.getItem("theme"));
+    themeApplyed(localStorage.getItem("theme"));
   } else if (event == "dark_mode") {
     document.body.classList.add(event);
     themeButtonIconChanger(event);
@@ -58,14 +153,14 @@ function themApplyed(event) {
 function changeTheme() {
   if (document.body.classList.contains("dark_mode")) {
     localStorage.setItem("theme", "light_mode");
-    themApplyed("light_mode");
+    themeApplyed("light_mode");
   } else {
     localStorage.setItem("theme", "dark_mode");
-    themApplyed("dark_mode");
+    themeApplyed("dark_mode");
   }
 }
 
-themApplyed(localStorage.getItem("theme"));
+themeApplyed(localStorage.getItem("theme"));
 
 mobilMenuIcon.onclick = () => {
   sidenav.classList.add("active");
@@ -144,9 +239,39 @@ ScrollReveal().reveal(".hero_section_content h1, .about_section_image", {
 /*---------------------------------- end Scroll Reveal Scripts --------------------------------*/
 
 /*-------------------------------------- Typed JS Scripts -------------------------------------*/
+let typedTextsEN = ["Web Designer", "Frontend Developer", "Based in Iran"];
+const typedEN = new Typed(".multiple_text_EN", {
+  strings: typedTextsEN,
+  typeSpeed: 50,
+  backSpeed: 10,
+  backDelay: 2000,
+  cursorChar: "_",
+  loop: true,
+});
 
-const typed = new Typed(".multiple_text", {
-  strings: ["Web Designer", "Frontend Developer", "Based in Iran"],
+let typedTextsIR = ["وب دیزاینر", "فرانتند دولوپر", "در ایران هستم"];
+const typedIR = new Typed(".multiple_text_IR", {
+  strings: typedTextsIR,
+  typeSpeed: 50,
+  backSpeed: 10,
+  backDelay: 2000,
+  cursorChar: "_",
+  loop: true,
+});
+
+let typedTextsJP = ["Web Designer", "Frontend Developer", "Based in Iran"];
+const typedJP = new Typed(".multiple_text_JP", {
+  strings: typedTextsJP,
+  typeSpeed: 50,
+  backSpeed: 10,
+  backDelay: 2000,
+  cursorChar: "_",
+  loop: true,
+});
+
+let typedTextsKR = ["Web Designer", "Frontend Developer", "Based in Iran"];
+const typedKR = new Typed(".multiple_text_KR", {
+  strings: typedTextsKR,
   typeSpeed: 50,
   backSpeed: 10,
   backDelay: 2000,
@@ -193,7 +318,7 @@ let sendEmail = (event) => {
         setTimeout(() => {
           stateSuccessMessage.classList.remove("active");
           stateSuccessMessage.textContent = "";
-        }, 5000);
+        }, 3000);
       },
       (error) => {
         stateErrorMessage.classList.add("active");
@@ -202,7 +327,7 @@ let sendEmail = (event) => {
         setTimeout(() => {
           stateErrorMessage.classList.remove("active");
           stateErrorMessage.textContent = "";
-        }, 5000);
+        }, 3000);
       }
     );
 };

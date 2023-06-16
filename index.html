@@ -7,6 +7,12 @@
     <!-- Let browser know website is optimized for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Import Flag Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+    />
+
     <!-- Import Box icons -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -39,19 +45,49 @@
       <h1 class="brand_logo"><span>P</span>arham-<span>D</span>esign</h1>
       <i class="bx bx-menu" id="mobile_menu_trigger"></i>
       <nav class="navbar">
-        <a href="#hero_section" class="active">Home</a>
-        <a href="#about_section">About</a>
-        <a href="#services_section">Services</a>
-        <a href="#works_section">Works</a>
-        <a href="#contact_section">Contact</a>
+        <a href="#hero_section" id="navbar_home_link" class="active"></a>
+        <a href="#about_section" id="navbar_about_link"></a>
+        <a href="#services_section" id="navbar_services_link"></a>
+        <a href="#works_section" id="navbar_works_link"></a>
+        <a href="#contact_section" id="navbar_contact_link"></a>
         <span>
           <i class="bx my_theme_toggle_button" onclick="changeTheme()"></i>
         </span>
         <span>
-          <i class="material-icons"> language </i>
+          <i
+            class="material-icons language_change_btn"
+            id="my_language_change_navbar_button"
+            onclick="openLanguageMenu(event)"
+          >
+            language
+          </i>
         </span>
       </nav>
     </header>
+
+    <div class="my_language_list_drop_down">
+      <ul>
+        <li onclick="changeLanguage('english')">
+          <span>English</span>
+          <span class="fi fi-us my_languages_flag"></span>
+        </li>
+        <hr class="divider" />
+        <li onclick="changeLanguage('persian')">
+          <span>فارسی</span>
+          <span class="fi fi-ir my_languages_flag"></span>
+        </li>
+        <hr class="divider" />
+        <li onclick="changeLanguage('japanes')">
+          <span>日本人</span>
+          <span class="fi fi-jp my_languages_flag"></span>
+        </li>
+        <hr class="divider" />
+        <li onclick="changeLanguage('korean')">
+          <span>한국인</span>
+          <span class="fi fi-kr my_languages_flag"></span>
+        </li>
+      </ul>
+    </div>
 
     <div class="my_sidenav" id="mobileSidenav">
       <div class="my_mobile_menu_cover">
@@ -67,11 +103,17 @@
               <i class="bx my_theme_toggle_button" onclick="changeTheme()"></i>
             </span>
             <span>
-              <i class="material-icons"> language </i>
+              <i
+                class="material-icons language_change_btn"
+                id="my_language_change_sidenav_button"
+                onclick="openLanguageMenu(event)"
+              >
+                language
+              </i>
             </span>
             <span id="close_sidenav_menu">
               <i
-                class="bx bx-arrow-back"
+                class="bx bx-arrow-back mobile_menu_close"
                 style="transform: rotateY(180deg)"
               ></i>
             </span>
@@ -92,38 +134,23 @@
       </div>
       <div class="my_mobile_menu_links">
         <h1>
-          <a class="subheader"> Page Links </a>
+          <a class="subheader" id="sidenav_page_links"></a>
         </h1>
         <ul>
           <li>
-            <a href="#hero_section" class="active">
-              <i class="bx bxs-home"></i>
-              Home
-            </a>
+            <a href="#hero_section" id="sidenav_home_link" class="active"></a>
           </li>
           <li>
-            <a href="#about_section">
-              <i class="bx bxs-info-circle"></i>
-              About
-            </a>
+            <a href="#about_section" id="sidenav_about_link"></a>
           </li>
           <li>
-            <a href="#services_section">
-              <i class="bx bxs-offer"></i>
-              Services
-            </a>
+            <a href="#services_section" id="sidenav_services_link"></a>
           </li>
           <li>
-            <a href="#works_section">
-              <i class="bx bxs-briefcase"></i>
-              Works
-            </a>
+            <a href="#works_section" id="sidenav_works_link"></a>
           </li>
           <li>
-            <a href="#contact_section">
-              <i class="bx bxs-contact"></i>
-              Contact
-            </a>
+            <a href="#contact_section" id="sidenav_contact_link"></a>
           </li>
         </ul>
       </div>
@@ -134,8 +161,17 @@
       <div class="hero_section_content">
         <h3>Hey!</h3>
         <h1>I'm a Freelancer</h1>
-        <h3>
-          <span class="multiple_text"></span>
+        <h3 class="multiple_text_EN_container">
+          <span class="multiple_text_EN"></span>
+        </h3>
+        <h3 class="multiple_text_IR_container">
+          <span class="multiple_text_IR"></span>
+        </h3>
+        <h3 class="multiple_text_JP_container">
+          <span class="multiple_text_JP"></span>
+        </h3>
+        <h3 class="multiple_text_KR_container">
+          <span class="multiple_text_KR"></span>
         </h3>
         <p>
           I have been working as a freelance web designer and front-end
@@ -393,6 +429,9 @@
     <div class="sidenav_overlay"></div>
 
     <div class="drag_target" style="display: none"></div>
+
+    <!-- Fake Database Json Scripts -->
+    <script src="./js/fakeJsonDB.js"></script>
 
     <!-- Email JS Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
