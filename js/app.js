@@ -10,41 +10,15 @@ let navbar = document.querySelector(".navbar");
 let sidenavOverlay = document.querySelector(".sidenav_overlay");
 let sidenav = document.querySelector(".my_sidenav");
 let closeSidenavMenu = document.querySelector("#close_sidenav_menu");
+let aboutSecondParagraph = document.getElementById(
+  "about_section_paragraph_second"
+);
+let aboutReadMoreBtn = document.getElementById("about_section_button");
 let myThemeToggleButton = document.querySelectorAll(".my_theme_toggle_button");
 let myLanguageChangeMenu = document.querySelector(
   ".my_language_list_drop_down"
 );
 let languages = ["english", "persian", "japanes", "korean"];
-// let pageText = {
-//   english: [
-//     {
-//       elementId: "Node 1",
-//       text: "#this is the first test for jason",
-//     },
-//     {
-//       elementId: "Node 2",
-//       text: "#this is the second test for jason",
-//     },
-//   ],
-//   persian: [
-//     {
-//       elementId: "Node 1",
-//       text: "#this is the test jason",
-//     },
-//   ],
-//   japanes: [
-//     {
-//       elementId: "Node 1",
-//       text: "#this is the test jason",
-//     },
-//   ],
-//   korean: [
-//     {
-//       elementId: "Node 1",
-//       text: "#this is the test jason",
-//     },
-//   ],
-// };
 
 window.addEventListener("click", function (e) {
   if (e.target.closest(".language_change_btn") === null) {
@@ -186,6 +160,15 @@ sidenavOverlay.onclick = () => {
   sidenavOverlay.classList.remove("active");
 };
 
+aboutReadMoreBtn.addEventListener("click", function () {
+  aboutSecondParagraph.setAttribute("style", "display: block;");
+});
+window.addEventListener("click", function (e) {
+  if (e.target.closest("#about_section_button") === null) {
+    aboutSecondParagraph.setAttribute("style", "display: none;");
+  }
+});
+
 window.onscroll = () => {
   sections.forEach((section) => {
     let top = window.scrollY;
@@ -255,7 +238,7 @@ const typedIR = new Typed(".multiple_text_IR", {
   typeSpeed: 50,
   backSpeed: 10,
   backDelay: 2000,
-  cursorChar: "_",
+  cursorChar: " _",
   loop: true,
 });
 
