@@ -188,8 +188,8 @@ let pageText = {
       text: "Contact <span>Me!</span>",
     },
     {
-      elementId: "footer_section_address",
-      text: "Bandar-e Anzali, Gilan Province, Iran",
+      elementId: "contact_form_button",
+      text: "Send Message",
     },
   ],
   persian: [
@@ -383,390 +383,396 @@ let pageText = {
       text: "تماس با  <span>من</span>",
     },
     {
-      elementId: "footer_section_address",
-      text: "ایران-استان گیلان-بندرانزلی",
+      elementId: "contact_form_button",
+      text: "ارسال پیام",
     },
   ],
   japanes: [
     {
       elementId: "navbar_home_link",
-      text: "Home",
+      text: "家頁",
     },
     {
       elementId: "navbar_about_link",
-      text: "About",
+      text: "だいたい",
     },
     {
       elementId: "navbar_services_link",
-      text: "Services",
+      text: "サービス",
     },
     {
       elementId: "navbar_works_link",
-      text: "Works",
+      text: "作品",
     },
     {
       elementId: "navbar_contact_link",
-      text: "Contact",
+      text: "コンタクト",
     },
     {
       elementId: "sidenav_page_links",
-      text: "Page Links",
+      text: "ページリンク",
     },
     {
       elementId: "sidenav_home_link",
-      text: "<i class='bx bxs-home'></i>Home",
+      text: "<i class='bx bxs-home'></i>家頁",
     },
     {
       elementId: "sidenav_about_link",
-      text: "<i class='bx bxs-info-circle'></i>About",
+      text: "<i class='bx bxs-info-circle'></i>だいたい",
     },
     {
       elementId: "sidenav_services_link",
-      text: "<i class='bx bxs-offer'></i>Services",
+      text: "<i class='bx bxs-offer'></i>サービス",
     },
     {
       elementId: "sidenav_works_link",
-      text: "<i class='bx bxs-briefcase'></i>Works",
+      text: "<i class='bx bxs-briefcase'></i>作品",
     },
     {
       elementId: "sidenav_contact_link",
-      text: "<i class='bx bxs-contact'></i>Contact",
+      text: "<i class='bx bxs-contact'></i>コンタクト",
     },
     {
       elementId: "hero_section_heding_h3",
-      text: "Hey!",
+      text: "おい！",
     },
     {
       elementId: "hero_section_heding_h1",
-      text: "I'm a Freelancer",
+      text: "私はフリーランサーの",
     },
     {
       elementId: "hero_section_paragraph",
       text: `
-      I have been working as a web designer and frontend developer since 2019. I always try to give my best by using my creativity along with my skills.`,
+      私は 2019 年から Web デザイナーおよびフロントエンド開発者として働いています。自分のスキルと創造性を活かして、常にベストを尽くすよう努めています。
+      `,
     },
     {
       elementId: "hero_section_button",
-      text: "Download CV <i class='material-icons'> download </i>",
+      text: "履歴書をダウンロード <i class='material-icons'> download </i>",
     },
     {
       elementId: "about_section_heding_h2",
-      text: "About <span>Me</span>",
+      text: "<span>私に</span>ついて！",
     },
     {
       elementId: "about_section_heding_h3",
-      text: "Web Designer & Frontend Developer",
+      text: "Web デザイナーおよびフロントエンド開発者",
     },
     {
       elementId: "about_section_paragraph_first",
-      text: `I am Sohail Zarinpour, many people know me as Parham. I am a web developer, user interface designer/ user experience designer. I have a lot of experience in working with html5 css3 scss jquery and java script. I also worked with some frameworks like angular and vue js. I am dominate on working with materialize css and bootstrap. Sometimes I develop my websites with php or node js and of course I use mysql for database.`,
+      text: `
+      私はソヘイル・ザリンプールです。多くの人は私のことをパーハムとして知っています。 私は Web 開発者、ユーザー インターフェイス デザイナー/ユーザー エクスペリエンス デザイナーです。 私は html5 css3 scss jquery と java script の使用経験が豊富です。 angular や vue js などのフレームワークも使用しました。 私はマテリアライズCSSとブートストラップを扱うことに専念しています。 時々私はphpやnode jsを使ってウェブサイトを開発しますが、もちろんデータベースにはmysqlを使用します。
+      `, // (soheil zarrinpour = ソハイル・ザリンプール)
     },
     {
       elementId: "about_section_paragraph_second",
       text: `
-      Well, you might ask what made me become a programmer. Well, I first started learning about computer repair, but after a few years I moved into software. My brothers are both programmers and they slowly pushed me towards programming as well. And now, after a lot of training and practice in frontend programming like I mentioned earlier, I became a web developer.
+      では、なぜ私がプログラマーになったのか尋ねるかもしれません。 そうですね、最初はコンピューターの修理について学び始めましたが、数年後にソフトウェアの分野に移りました。 私の兄弟は二人ともプログラマーで、私もゆっくりとプログラミングに取り組むように仕向けられました。 そして今、前に述べたように、フロントエンド プログラミングの多くのトレーニングと実践を経て、Web 開発者になりました。
       `,
     },
     {
       elementId: "about_section_button",
-      text: "Read More",
+      text: "続きを読む",
     },
     {
       elementId: "services_section_heding_h2",
-      text: "My <span>Services</span>",
+      text: "私の<span>サービス</span>",
     },
     {
       elementId: "services_section_box_heding_1",
-      text: "Web Development",
+      text: "ウェブ開発",
     },
     {
       elementId: "services_section_box_paragraph_1",
       text: `
-      Implementation of designs with the highest quality in the shortest possible time for various websites and web applications
+      さまざまなWebサイトやWebアプリケーションに最高品質のデザインを最短で実現します。
       `,
     },
     {
       elementId: "services_section_box_button_1",
-      text: "Read More",
+      text: "続きを読む",
     },
     {
       elementId: "services_section_box_heding_2",
-      text: "Responsive Design",
+      text: "レスポンシブデザイン",
     },
     {
       elementId: "services_section_box_paragraph_2",
       text: `
-      Implementation of fully responsive and reactive designs for use on various devices with different screen sizes.
+      画面サイズの異なるさまざまなデバイスで使用できる、完全にレスポンシブでリアクティブなデザインの実装。
       `,
     },
     {
       elementId: "services_section_box_button_2",
-      text: "Read More",
+      text: "続きを読む",
     },
     {
       elementId: "services_section_box_heding_3",
-      text: "UI/UX Design",
+      text: "UI/UXデザイン",
     },
     {
       elementId: "services_section_box_paragraph_3",
       text: `
-      Designing different pages and themes and applications in accordance with the latest design and design standards, taking into account the needs of users
+      ユーザーのニーズを考慮して、最新のデザインとデザイン基準に従ってさまざまなページ、テーマ、アプリケーションをデザインします。
       `,
     },
     {
       elementId: "services_section_box_button_3",
-      text: "Read More",
+      text: "続きを読む",
     },
     {
       elementId: "works_section_heding_h2",
-      text: "Latest <span>Projects</span>",
+      text: "最新<span>のプロジェクト</span>",
     },
     {
       elementId: "works_section_heding_box_1",
-      text: "project 1",
+      text: "プロジェクト1",
     },
     {
       elementId: "works_section_paragraph_box_1",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "まもなく、このセクションで最新のプロジェクトをご覧いただけるようになる予定です。",
     },
     {
       elementId: "works_section_heding_box_2",
-      text: "project 2",
+      text: "プロジェクト2",
     },
     {
       elementId: "works_section_paragraph_box_2",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "まもなく、このセクションで最新のプロジェクトをご覧いただけるようになる予定です。",
     },
     {
       elementId: "works_section_heding_box_3",
-      text: "project 3",
+      text: "プロジェクト3",
     },
     {
       elementId: "works_section_paragraph_box_3",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "まもなく、このセクションで最新のプロジェクトをご覧いただけるようになる予定です。",
     },
     {
       elementId: "works_section_heding_box_4",
-      text: "project 4",
+      text: "プロジェクト4",
     },
     {
       elementId: "works_section_paragraph_box_4",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "まもなく、このセクションで最新のプロジェクトをご覧いただけるようになる予定です。",
     },
     {
       elementId: "works_section_heding_box_5",
-      text: "project 5",
+      text: "プロジェクト5",
     },
     {
       elementId: "works_section_paragraph_box_5",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "まもなく、このセクションで最新のプロジェクトをご覧いただけるようになる予定です。",
     },
     {
       elementId: "works_section_heding_box_6",
-      text: "project 6",
+      text: "プロジェクト6",
     },
     {
       elementId: "works_section_paragraph_box_6",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "まもなく、このセクションで最新のプロジェクトをご覧いただけるようになる予定です。",
     },
     {
       elementId: "contact_section_heding_h2",
-      text: "Contact <span>Me!</span>",
+      text: "<span>私に</span>連絡して！",
     },
     {
-      elementId: "footer_section_address",
-      text: "Bandar-e Anzali, Gilan Province, Iran",
+      elementId: "contact_form_button",
+      text: "メッセージを送る",
     },
   ],
   korean: [
     {
       elementId: "navbar_home_link",
-      text: "Home",
+      text: "홈페이지",
     },
     {
       elementId: "navbar_about_link",
-      text: "About",
+      text: "에 대한",
     },
     {
       elementId: "navbar_services_link",
-      text: "Services",
+      text: "서비스",
     },
     {
       elementId: "navbar_works_link",
-      text: "Works",
+      text: "일하다",
     },
     {
       elementId: "navbar_contact_link",
-      text: "Contact",
+      text: "연락하다",
     },
     {
       elementId: "sidenav_page_links",
-      text: "Page Links",
+      text: "페이지 링크",
     },
     {
       elementId: "sidenav_home_link",
-      text: "<i class='bx bxs-home'></i>Home",
+      text: "<i class='bx bxs-home'></i>홈페이지",
     },
     {
       elementId: "sidenav_about_link",
-      text: "<i class='bx bxs-info-circle'></i>About",
+      text: "<i class='bx bxs-info-circle'></i>에 대한",
     },
     {
       elementId: "sidenav_services_link",
-      text: "<i class='bx bxs-offer'></i>Services",
+      text: "<i class='bx bxs-offer'></i>서비스",
     },
     {
       elementId: "sidenav_works_link",
-      text: "<i class='bx bxs-briefcase'></i>Works",
+      text: "<i class='bx bxs-briefcase'></i>일하다",
     },
     {
       elementId: "sidenav_contact_link",
-      text: "<i class='bx bxs-contact'></i>Contact",
+      text: "<i class='bx bxs-contact'></i>연락하다",
     },
     {
       elementId: "hero_section_heding_h3",
-      text: "Hey!",
+      text: "여기요!",
     },
     {
       elementId: "hero_section_heding_h1",
-      text: "I'm a Freelancer",
+      text: "저는 프리랜서입니다",
     },
     {
       elementId: "hero_section_paragraph",
       text: `
-      I have been working as a web designer and frontend developer since 2019. I always try to give my best by using my creativity along with my skills.`,
+      저는 2019년부터 웹디자이너와 프론트엔드 개발자로 일하고 있습니다. 저는 항상 제 능력과 함께 창의력을 발휘하여 최선을 다하려고 노력합니다.
+      `,
     },
     {
       elementId: "hero_section_button",
-      text: "Download CV <i class='material-icons'> download </i>",
+      text: "이력서 다운로드 <i class='material-icons'> download </i>",
     },
     {
       elementId: "about_section_heding_h2",
-      text: "About <span>Me</span>",
+      text: "<span>나</span>에 대해서",
     },
     {
       elementId: "about_section_heding_h3",
-      text: "Web Designer & Frontend Developer",
+      text: "웹 디자이너 및 프런트엔드 개발자",
     },
     {
       elementId: "about_section_paragraph_first",
-      text: `I am Sohail Zarinpour, many people know me as Parham. I am a web developer, user interface designer/ user experience designer. I have a lot of experience in working with html5 css3 scss jquery and java script. I also worked with some frameworks like angular and vue js. I am dominate on working with materialize css and bootstrap. Sometimes I develop my websites with php or node js and of course I use mysql for database.`,
+      text: `
+      저는 소헤일 자린푸어 이고 많은 사람들이 저를 Parham으로 알고 있습니다. 저는 웹 개발자, 사용자 인터페이스 디자이너/사용자 경험 디자이너입니다. 저는 html5 css3 scss jquery 및 자바 스크립트 작업에 많은 경험이 있습니다. 또한 angular 및 vue js와 같은 일부 프레임워크로 작업했습니다. 저는 CSS와 부트스트랩을 구체화하는 작업을 지배하고 있습니다. 때때로 저는 php나 node js로 웹사이트를 개발하고 물론 데이터베이스에 mysql을 사용합니다.
+      `, // (soheil zarrinpour = 소헤일 자린푸어)
     },
     {
       elementId: "about_section_paragraph_second",
       text: `
-      Well, you might ask what made me become a programmer. Well, I first started learning about computer repair, but after a few years I moved into software. My brothers are both programmers and they slowly pushed me towards programming as well. And now, after a lot of training and practice in frontend programming like I mentioned earlier, I became a web developer.
+      글쎄, 당신은 내가 프로그래머가 된 이유를 물을 수 있습니다. 글쎄, 나는 처음에 컴퓨터 수리에 대해 배우기 시작했지만 몇 년 후 소프트웨어로 옮겼습니다. 제 형제들은 둘 다 프로그래머이고 그들은 천천히 저도 프로그래밍 쪽으로 밀어붙였습니다. 그리고 지금은 앞에서 언급한 프론트엔드 프로그래밍에 대한 많은 훈련과 연습을 거쳐 웹 개발자가 되었습니다.
       `,
     },
     {
       elementId: "about_section_button",
-      text: "Read More",
+      text: "더 읽어보기",
     },
     {
       elementId: "services_section_heding_h2",
-      text: "My <span>Services</span>",
+      text: "내 <span>서비스</span>",
     },
     {
       elementId: "services_section_box_heding_1",
-      text: "Web Development",
+      text: "웹 개발",
     },
     {
       elementId: "services_section_box_paragraph_1",
       text: `
-      Implementation of designs with the highest quality in the shortest possible time for various websites and web applications
+      다양한 웹사이트 및 웹 어플리케이션에 대해 최단 시간에 최고 품질의 디자인 구현
       `,
     },
     {
       elementId: "services_section_box_button_1",
-      text: "Read More",
+      text: "더 읽어보기",
     },
     {
       elementId: "services_section_box_heding_2",
-      text: "Responsive Design",
+      text: "반응형 디자인",
     },
     {
       elementId: "services_section_box_paragraph_2",
       text: `
-      Implementation of fully responsive and reactive designs for use on various devices with different screen sizes.
+      화면 크기가 다른 다양한 장치에서 사용할 수 있는 완전 반응형 및 반응형 디자인 구현.
       `,
     },
     {
       elementId: "services_section_box_button_2",
-      text: "Read More",
+      text: "더 읽어보기",
     },
     {
       elementId: "services_section_box_heding_3",
-      text: "UI/UX Design",
+      text: "UI/UX 디자인",
     },
     {
       elementId: "services_section_box_paragraph_3",
       text: `
-      Designing different pages and themes and applications in accordance with the latest design and design standards, taking into account the needs of users
+      사용자의 요구를 고려하여 최신 디자인 및 디자인 표준에 따라 다양한 페이지, 테마 및 애플리케이션 디자인
       `,
     },
     {
       elementId: "services_section_box_button_3",
-      text: "Read More",
+      text: "더 읽어보기",
     },
     {
       elementId: "works_section_heding_h2",
-      text: "Latest <span>Projects</span>",
+      text: "최신 <span>프로젝트</span>",
     },
     {
       elementId: "works_section_heding_box_1",
-      text: "project 1",
+      text: "프로젝트 1",
     },
     {
       elementId: "works_section_paragraph_box_1",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "곧 이 섹션에서 최신 및 가장 업데이트된 프로젝트를 볼 수 있습니다.",
     },
     {
       elementId: "works_section_heding_box_2",
-      text: "project 2",
+      text: "프로젝트 2",
     },
     {
       elementId: "works_section_paragraph_box_2",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "곧 이 섹션에서 최신 및 가장 업데이트된 프로젝트를 볼 수 있습니다.",
     },
     {
       elementId: "works_section_heding_box_3",
-      text: "project 3",
+      text: "프로젝트 3",
     },
     {
       elementId: "works_section_paragraph_box_3",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "곧 이 섹션에서 최신 및 가장 업데이트된 프로젝트를 볼 수 있습니다.",
     },
     {
       elementId: "works_section_heding_box_4",
-      text: "project 4",
+      text: "프로젝트 4",
     },
     {
       elementId: "works_section_paragraph_box_4",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "곧 이 섹션에서 최신 및 가장 업데이트된 프로젝트를 볼 수 있습니다.",
     },
     {
       elementId: "works_section_heding_box_5",
-      text: "project 5",
+      text: "프로젝트 5",
     },
     {
       elementId: "works_section_paragraph_box_5",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "곧 이 섹션에서 최신 및 가장 업데이트된 프로젝트를 볼 수 있습니다.",
     },
     {
       elementId: "works_section_heding_box_6",
-      text: "project 6",
+      text: "프로젝트 6",
     },
     {
       elementId: "works_section_paragraph_box_6",
-      text: "Soon you will be able to see our latest and most updated projects in this section.",
+      text: "곧 이 섹션에서 최신 및 가장 업데이트된 프로젝트를 볼 수 있습니다.",
     },
     {
       elementId: "contact_section_heding_h2",
-      text: "Contact <span>Me!</span>",
+      text: "<span>저에게</span> 연락하십시오!",
     },
     {
-      elementId: "footer_section_address",
-      text: "Bandar-e Anzali, Gilan Province, Iran",
+      elementId: "contact_form_button",
+      text: "문자 보내",
     },
   ],
 };

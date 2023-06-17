@@ -222,7 +222,7 @@ ScrollReveal().reveal(".hero_section_content h1, .about_section_image", {
 /*---------------------------------- end Scroll Reveal Scripts --------------------------------*/
 
 /*-------------------------------------- Typed JS Scripts -------------------------------------*/
-let typedTextsEN = ["Web Designer", "Frontend Developer", "Based in Iran"];
+let typedTextsEN = ["Web Designer", "Frontend Developer"];
 const typedEN = new Typed(".multiple_text_EN", {
   strings: typedTextsEN,
   typeSpeed: 50,
@@ -232,7 +232,7 @@ const typedEN = new Typed(".multiple_text_EN", {
   loop: true,
 });
 
-let typedTextsIR = ["وب دیزاینر", "فرانتند دولوپر", "در ایران هستم"];
+let typedTextsIR = ["وب دیزاینر", "فرانتند دولوپر", "هستم"];
 const typedIR = new Typed(".multiple_text_IR", {
   strings: typedTextsIR,
   typeSpeed: 50,
@@ -242,7 +242,7 @@ const typedIR = new Typed(".multiple_text_IR", {
   loop: true,
 });
 
-let typedTextsJP = ["Web Designer", "Frontend Developer", "Based in Iran"];
+let typedTextsJP = ["Webデザイナー", "兼フロントエンド開発者"];
 const typedJP = new Typed(".multiple_text_JP", {
   strings: typedTextsJP,
   typeSpeed: 50,
@@ -252,7 +252,7 @@ const typedJP = new Typed(".multiple_text_JP", {
   loop: true,
 });
 
-let typedTextsKR = ["Web Designer", "Frontend Developer", "Based in Iran"];
+let typedTextsKR = ["웹 디자이너", "프론트엔드 개발자"];
 const typedKR = new Typed(".multiple_text_KR", {
   strings: typedTextsKR,
   typeSpeed: 50,
@@ -306,7 +306,7 @@ let sendEmail = (event) => {
       (error) => {
         stateErrorMessage.classList.add("active");
         stateErrorMessage.textContent =
-          "message not sended (error : " + error.status + ")";
+          "Message not sended (error : " + error.status + ")";
         setTimeout(() => {
           stateErrorMessage.classList.remove("active");
           stateErrorMessage.textContent = "";

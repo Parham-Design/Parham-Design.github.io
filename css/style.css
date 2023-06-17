@@ -186,12 +186,14 @@ span {
 /* start drop down language style */
 
 .my_language_list_drop_down {
+  max-width: 200px;
+  height: 214px;
   position: fixed;
   display: none;
   background: rgb(var(--background_color));
   z-index: 1000;
   border: 1px solid rgb(var(--text_primary_color));
-  padding: 0;
+  padding: 1px;
   border-radius: 5px;
   color: rgb(var(--text_primary_color));
   box-shadow: 0 0 0.5rem 0.1rem
@@ -215,10 +217,19 @@ span {
 }
 
 .my_language_list_drop_down ul {
+  width: 100%;
+  height: 210px;
+  overflow: scroll;
   color: inherit;
   list-style: none;
   border-radius: 5px;
-  overflow: hidden;
+  overflow: scroll;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.my_language_list_drop_down ul::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }
 
 .my_language_list_drop_down ul .divider {
@@ -529,7 +540,7 @@ body.korean .multiple_text_KR_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 170px;
+  max-width: 220px;
   font-size: 1.6rem;
 }
 
@@ -565,6 +576,10 @@ body.korean .multiple_text_KR_container {
 
 .about_section_content {
   padding-left: 5rem;
+}
+
+#about_section_paragraph_second {
+  display: none;
 }
 
 body.persian .about_section_content {
