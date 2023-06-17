@@ -1,4 +1,95 @@
-// just for test fake json data base
+// Fake Database Json
+
+let formText = {
+  english: [
+    {
+      elementId: "user_name",
+      attributeValue: "Enter you'r Name",
+    },
+    {
+      elementId: "user_email",
+      attributeValue: "Email Address",
+    },
+    {
+      elementId: "user_number",
+      attributeValue: "Mobile Number",
+    },
+    {
+      elementId: "user_subject",
+      attributeValue: "Email Title",
+    },
+    {
+      elementId: "user_message",
+      attributeValue: "Please enter your message",
+    },
+  ],
+  persian: [
+    {
+      elementId: "user_name",
+      attributeValue: "نام خود را وارد کنید",
+    },
+    {
+      elementId: "user_email",
+      attributeValue: "آدرس ایمیل",
+    },
+    {
+      elementId: "user_number",
+      attributeValue: "شماره موبایل",
+    },
+    {
+      elementId: "user_subject",
+      attributeValue: "موضوع نامه",
+    },
+    {
+      elementId: "user_message",
+      attributeValue: "لطفا پیام خود را وارد کنید",
+    },
+  ],
+  japanes: [
+    {
+      elementId: "user_name",
+      attributeValue: "あなたの名前を入力してください",
+    },
+    {
+      elementId: "user_email",
+      attributeValue: "電子メールアドレス",
+    },
+    {
+      elementId: "user_number",
+      attributeValue: "携帯電話番号",
+    },
+    {
+      elementId: "user_subject",
+      attributeValue: "メールタイトル",
+    },
+    {
+      elementId: "user_message",
+      attributeValue: "メッセージを入力してください",
+    },
+  ],
+  korean: [
+    {
+      elementId: "user_name",
+      attributeValue: "당신의 이름을 입력",
+    },
+    {
+      elementId: "user_email",
+      attributeValue: "이메일 주소",
+    },
+    {
+      elementId: "user_number",
+      attributeValue: "휴대폰 번호",
+    },
+    {
+      elementId: "user_subject",
+      attributeValue: "메일 제목",
+    },
+    {
+      elementId: "user_message",
+      attributeValue: "메시지를 입력하세요",
+    },
+  ],
+};
 
 let pageText = {
   english: [

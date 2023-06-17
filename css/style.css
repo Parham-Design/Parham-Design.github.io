@@ -769,10 +769,25 @@ body.persian .works_container {
   text-align: center;
 }
 
+body.persian .contact_section form {
+  direction: rtl;
+}
+
 .contact_section form .input_box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .contact_section form .input_box input,

@@ -19,6 +19,8 @@ let myLanguageChangeMenu = document.querySelector(
   ".my_language_list_drop_down"
 );
 let languages = ["english", "persian", "japanes", "korean"];
+let successMessage = "";
+let errorMessage = "";
 
 window.addEventListener("click", function (e) {
   if (e.target.closest(".language_change_btn") === null) {
@@ -30,12 +32,13 @@ function openLanguageMenu(event) {
   if (myLanguageChangeMenu.style.display == "block") {
     myLanguageChangeMenu.setAttribute("style", "display: none;");
   } else {
+    console.log(event);
     myLanguageChangeMenu.setAttribute(
       "style",
       "display: block; top: calc(" +
-        event.path[0].offsetTop +
+        event.target.offsetTop +
         "px + 35px); left: calc(" +
-        event.path[0].offsetLeft +
+        event.target.offsetLeft +
         "px - 165px);"
     );
   }
@@ -59,24 +62,48 @@ function changeLanguage(event) {
     document.body.classList.add(event);
     if (event == "english") {
       pageText.english.forEach((res) => {
-        // document.getElementById(res.elementId).textContent = res.text;
         document.getElementById(res.elementId).innerHTML = res.text;
       });
+      formText.english.forEach((res) => {
+        document
+          .getElementById(res.elementId)
+          .setAttribute("placeholder", res.attributeValue);
+      });
+      successMessage = "Sent successfully";
+      errorMessage = "Message not sent (error :";
     } else if (event == "persian") {
       pageText.persian.forEach((res) => {
-        // document.getElementById(res.elementId).textContent = res.text;
         document.getElementById(res.elementId).innerHTML = res.text;
       });
+      formText.persian.forEach((res) => {
+        document
+          .getElementById(res.elementId)
+          .setAttribute("placeholder", res.attributeValue);
+      });
+      successMessage = "با موفقیت ارسال شد";
+      errorMessage = "پیام ارسال نشد (کد خطا :";
     } else if (event == "japanes") {
       pageText.japanes.forEach((res) => {
-        // document.getElementById(res.elementId).textContent = res.text;
         document.getElementById(res.elementId).innerHTML = res.text;
       });
+      formText.japanes.forEach((res) => {
+        document
+          .getElementById(res.elementId)
+          .setAttribute("placeholder", res.attributeValue);
+      });
+      successMessage = "正常に送信されました";
+      errorMessage = "メッセージは送信されませんでした (エラーコード :";
     } else if (event == "korean") {
       pageText.korean.forEach((res) => {
-        // document.getElementById(res.elementId).textContent = res.text;
         document.getElementById(res.elementId).innerHTML = res.text;
       });
+      formText.korean.forEach((res) => {
+        document
+          .getElementById(res.elementId)
+          .setAttribute("placeholder", res.attributeValue);
+      });
+      successMessage = "성공적으로 전송";
+      errorMessage = "메시지가 전송되지 않음 (에러 코드 :";
     }
   }
 }
@@ -294,9 +321,9 @@ let sendEmail = (event) => {
       publicKey
     )
     .then(
-      (seccess) => {
+      (success) => {
         stateSuccessMessage.classList.add("active");
-        stateSuccessMessage.textContent = "Message sended successfully";
+        stateSuccessMessage.textContent = successMessage;
         contactForm.reset();
         setTimeout(() => {
           stateSuccessMessage.classList.remove("active");
@@ -305,8 +332,7 @@ let sendEmail = (event) => {
       },
       (error) => {
         stateErrorMessage.classList.add("active");
-        stateErrorMessage.textContent =
-          "Message not sended (error : " + error.status + ")";
+        stateErrorMessage.textContent = errorMessage + error.status + ")";
         setTimeout(() => {
           stateErrorMessage.classList.remove("active");
           stateErrorMessage.textContent = "";
