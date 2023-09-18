@@ -22,6 +22,30 @@ let languages = ["english", "persian", "japanes", "korean"];
 let successMessage = "";
 let errorMessage = "";
 
+function myTyped(event) {
+  let a = document.querySelector(".multiple_text_container");
+  let b = document.querySelectorAll(".multiple_text");
+  let c = document.querySelectorAll(".typed-cursor");
+  b.forEach((d) => {
+    a.removeChild(d);
+  });
+  c.forEach((e) => {
+    a.removeChild(e);
+  });
+  let f = document.createElement("span");
+  f.classList.add("multiple_text");
+  a.appendChild(f);
+  let typed = new Typed(".multiple_text", {
+    strings: event,
+    typeSpeed: 50,
+    backSpeed: 10,
+    backDelay: 2000,
+    cursorChar: "_",
+    loop: true,
+  });
+  return typed;
+}
+
 window.addEventListener("click", function (e) {
   if (e.target.closest(".language_change_btn") === null) {
     myLanguageChangeMenu.setAttribute("style", "display: none;");
@@ -32,14 +56,13 @@ function openLanguageMenu(event) {
   if (myLanguageChangeMenu.style.display == "block") {
     myLanguageChangeMenu.setAttribute("style", "display: none;");
   } else {
-    console.log(event);
     myLanguageChangeMenu.setAttribute(
       "style",
       "display: block; top: calc(" +
         event.target.offsetTop +
-        "px + 35px); left: calc(" +
+        "px + 35px); left: calc(34px + " +
         event.target.offsetLeft +
-        "px - 165px);"
+        "px - 150px);"
     );
   }
 }
@@ -61,6 +84,7 @@ function changeLanguage(event) {
     localStorage.setItem("language", event);
     document.body.classList.add(event);
     if (event == "english") {
+      myTyped(["Web Designer", "Frontend Developer"]);
       pageText.english.forEach((res) => {
         document.getElementById(res.elementId).innerHTML = res.text;
       });
@@ -72,6 +96,7 @@ function changeLanguage(event) {
       successMessage = "Sent successfully";
       errorMessage = "Message not sent (error :";
     } else if (event == "persian") {
+      myTyped(["وب دیزاینر", "فرانتند دولوپر", "هستم"]);
       pageText.persian.forEach((res) => {
         document.getElementById(res.elementId).innerHTML = res.text;
       });
@@ -83,6 +108,7 @@ function changeLanguage(event) {
       successMessage = "با موفقیت ارسال شد";
       errorMessage = "پیام ارسال نشد (کد خطا :";
     } else if (event == "japanes") {
+      myTyped(["Webデザイナー", "兼フロントエンド開発者"]);
       pageText.japanes.forEach((res) => {
         document.getElementById(res.elementId).innerHTML = res.text;
       });
@@ -94,6 +120,7 @@ function changeLanguage(event) {
       successMessage = "正常に送信されました";
       errorMessage = "メッセージは送信されませんでした (エラーコード :";
     } else if (event == "korean") {
+      myTyped(["웹 디자이너", "프론트엔드 개발자"]);
       pageText.korean.forEach((res) => {
         document.getElementById(res.elementId).innerHTML = res.text;
       });
@@ -188,11 +215,12 @@ sidenavOverlay.onclick = () => {
 };
 
 aboutReadMoreBtn.addEventListener("click", function () {
-  aboutSecondParagraph.setAttribute("style", "display: block;");
+  aboutSecondParagraph.classList.toggle("active");
 });
+
 window.addEventListener("click", function (e) {
   if (e.target.closest("#about_section_button") === null) {
-    aboutSecondParagraph.setAttribute("style", "display: none;");
+    aboutSecondParagraph.classList.remove("active");
   }
 });
 
@@ -228,7 +256,7 @@ window.onscroll = () => {
 /*------------------------------------ Scroll Reveal Scripts ----------------------------------*/
 
 ScrollReveal({
-  reset: true,
+  // reset: true,
   distance: "80px",
   duration: 2000,
   delay: 200,
@@ -247,49 +275,6 @@ ScrollReveal().reveal(".hero_section_content h1, .about_section_image", {
 });
 
 /*---------------------------------- end Scroll Reveal Scripts --------------------------------*/
-
-/*-------------------------------------- Typed JS Scripts -------------------------------------*/
-let typedTextsEN = ["Web Designer", "Frontend Developer"];
-const typedEN = new Typed(".multiple_text_EN", {
-  strings: typedTextsEN,
-  typeSpeed: 50,
-  backSpeed: 10,
-  backDelay: 2000,
-  cursorChar: "_",
-  loop: true,
-});
-
-let typedTextsIR = ["وب دیزاینر", "فرانتند دولوپر", "هستم"];
-const typedIR = new Typed(".multiple_text_IR", {
-  strings: typedTextsIR,
-  typeSpeed: 50,
-  backSpeed: 10,
-  backDelay: 2000,
-  cursorChar: " _",
-  loop: true,
-});
-
-let typedTextsJP = ["Webデザイナー", "兼フロントエンド開発者"];
-const typedJP = new Typed(".multiple_text_JP", {
-  strings: typedTextsJP,
-  typeSpeed: 50,
-  backSpeed: 10,
-  backDelay: 2000,
-  cursorChar: "_",
-  loop: true,
-});
-
-let typedTextsKR = ["웹 디자이너", "프론트엔드 개발자"];
-const typedKR = new Typed(".multiple_text_KR", {
-  strings: typedTextsKR,
-  typeSpeed: 50,
-  backSpeed: 10,
-  backDelay: 2000,
-  cursorChar: "_",
-  loop: true,
-});
-
-/*------------------------------------ end Typed JS Scripts -----------------------------------*/
 
 /*-------------------------------------- Email JS Scripts -------------------------------------*/
 
